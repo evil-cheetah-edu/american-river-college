@@ -1,8 +1,8 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace std;
 
+using namespace std;
 
 
 void initTable (bool table[1024][10]);
@@ -40,7 +40,9 @@ void initTable(bool table[1024][10])
 
 }
 
+
 void printTable(bool table[1024][10])
+/// 
 {
     for (unsigned i = 0; i < 1024; ++i)
     {
@@ -51,31 +53,32 @@ void printTable(bool table[1024][10])
     }
 }
 
+
 bool isRowSat(bool row[10])
 {
     ///False if ((A, B), (B, E), (D, C), (C, E))
-    return (///Subject doesn't exist on both periods
-            ///A
-            (row[0] || row[1]) && !(row[0] && row[1]) &&
-            ///B
-            (row[2] || row[3]) && !(row[2] && row[3]) &&
-            ///C
-            (row[4] || row[5]) && !(row[4] && row[5]) &&
-            ///D
-            (row[6] || row[7]) && !(row[6] && row[7]) &&
-            ///E
-            (row[8] || row[9]) && !(row[8] && row[9]) &&
+    return (
+        ///Subject doesn't exist on both periods
+        ///A
+        (row[0] || row[1]) && !(row[0] && row[1]) &&
+        ///B
+        (row[2] || row[3]) && !(row[2] && row[3]) &&
+        ///C
+        (row[4] || row[5]) && !(row[4] && row[5]) &&
+        ///D
+        (row[6] || row[7]) && !(row[6] && row[7]) &&
+        ///E
+        (row[8] || row[9]) && !(row[8] && row[9]) &&
 
-            ///(A, B)
-            !(row[0] && row[2]) && !(row[1] && row[3]) &&
-            ///(B, E)
-            !(row[2] && row[8]) && !(row[3] && row[9]) &&
-            ///(D, C)
-            !(row[6] && row[4]) && !(row[7] && row[5]) &&
-            ///(C, E)
-            !(row[4] && row[8]) && !(row[5] && row[9])
-
-            );
+        ///(A, B)
+        !(row[0] && row[2]) && !(row[1] && row[3]) &&
+        ///(B, E)
+        !(row[2] && row[8]) && !(row[3] && row[9]) &&
+        ///(D, C)
+        !(row[6] && row[4]) && !(row[7] && row[5]) &&
+        ///(C, E)
+        !(row[4] && row[8]) && !(row[5] && row[9])
+    );
 
 }
 
