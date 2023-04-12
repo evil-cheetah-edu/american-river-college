@@ -1,2 +1,8 @@
+# Compilation files
 bin/
 obj/
+
+# CodeBlocks files
+*.cbp
+*.depend
+*.layout
