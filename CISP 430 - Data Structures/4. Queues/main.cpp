@@ -34,7 +34,7 @@ int main()
    
     cout << "Numbers:" << endl;
     traverse(front);
-    cout << endl << endl;
+    cout << endl;
     
     deleteNonpositive(front, rear);
     
@@ -98,6 +98,9 @@ void readfile(struct node *&front, struct node *&rear)
 }
 
 
+/**
+ * Traverses a queue without dequeuing
+ */
 void traverse(struct node* front)
 {
     while (front)
@@ -105,9 +108,14 @@ void traverse(struct node* front)
         cout << front->item << " ";
         front = front->next;
     }
+
+    cout << endl;
 }
 
-///Display the vars and dequeue
+
+/**
+ * Traverses a queue with dequeuing
+ */
 void display(struct node *&front, struct node *&rear)
 {
     while (front)
@@ -115,6 +123,7 @@ void display(struct node *&front, struct node *&rear)
         cout << front->item << " ";
         dequeue(front, rear);
     }
+
     cout << endl;
 }
 
