@@ -159,16 +159,22 @@ void Traverse(node* head)
 }
 
 
+/**
+ * Merges 2 linkedLists into one
+ * 
+ * Returns: poiter to merged linkedList
+ */
 node* Merge(node* &list1, node* &list2)
 {
     node* merged = nullptr;
-    node* curr = list1;
+    node* curr   = list1;
 
     while (curr)
     {
         addNode(merged, curr->data);
         curr = curr->next;
     }
+    
     curr = list2;
 
     while (curr)
