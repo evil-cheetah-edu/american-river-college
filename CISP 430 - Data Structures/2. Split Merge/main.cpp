@@ -43,29 +43,27 @@ int main()
 }
 
 
-
+/**
+ * Create node and link data to the list
+ */
 void addNode(node* &head, string data)
 {
-    ///Allocates memory and assigns
     node* nNode = new node;
     nNode->data = data;
     nNode->next = nullptr;
 
-    ///Is it empty?
     if (!head)
-        head = nNode;
-
-    ///No?
-    else
     {
-        node* curr = head;
-        ///Goto end of the list
-        while ( curr->next )
-            curr = curr->next;
-
-        ///End = nNode
-        curr->next = nNode;
+        head = nNode;
+        return;
     }
+
+    node* current = head;
+
+    while ( current->next )
+        current = current->next;
+
+    current->next = nNode;
 }
 
 
