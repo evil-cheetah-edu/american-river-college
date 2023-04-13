@@ -112,7 +112,9 @@ void push(struct node *&top, char item)
 }
 
 
-
+/**
+ * Returns a priority of the passed operator
+ */
 int precedence(char c)
 {
     switch(c)
@@ -125,8 +127,7 @@ int precedence(char c)
         case('/'):
             return 2;
 
-        ///Even the brackets
-        ///Brackets are treated in evaluateExpression()
+        /// Brackets are treated in `evaluateExpression`
         default:
             return 0;
     }
