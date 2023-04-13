@@ -14,7 +14,11 @@ Default confuguration, for some reason, throws an error at `parser.h`.
 ___
 
 ## Specifications
-Placeholder
+All necessary specification are located in `main.cpp` file within the comments.
 ___
 `Requirements`:
-- Placeholder
+Implement the following function according to the description located in `main.cpp`:
+- `initTable`
+- `printTable`
+- `appendColumn`
+- `isValid`
