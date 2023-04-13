@@ -7,7 +7,7 @@ I. [CISP 400 - Object Oriented Programming with C++](https://github.com/EvilChee
 
 II. [CISP 430 - Data Structures](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures)
   1. [stringManip](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/1.%20stringManip)
-  2. [Merge Split](#)
+  2. [Merge Split](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/2.%20Split%20Merge)
 
 
 III. [CISP 440 - Discrete Structures for Computer Science](https://github.com/EvilCheetah/coursework/tree/master/CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science)

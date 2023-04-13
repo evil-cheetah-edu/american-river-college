@@ -5,3 +5,4 @@ This course applies object-oriented techniques for systematic problem analysis a
 ___
 ## Assignments
 1. [stringManip](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/1.%20stringManip)
+2. [Merge Split](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/2.%20Split%20Merge)
