@@ -6,6 +6,9 @@
 using namespace std;
 
 
+ifstream in("input.txt");
+
+
 struct node
 {
     char item;
@@ -25,9 +28,6 @@ void   popStack(struct node *&top, string &resultant, char currOperator = 0);
 string evaluateExpression(string inPut);
 
 
-ifstream in("input.txt");
-
-
 int main()
 {
    string input  = "",
@@ -41,8 +41,8 @@ int main()
      
    result = evaluateExpression(input);
    
-   cout << "Evaluated to Postfix Notation:" << endl;
-   cout << result << endl;
+   cout << "Evaluated to Postfix Notation:" << endl
+        << result << endl;
 
    in.close();
    
