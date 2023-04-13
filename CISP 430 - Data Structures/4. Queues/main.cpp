@@ -127,6 +127,20 @@ void display(struct node *&front, struct node *&rear)
     cout << endl;
 }
 
+
+/**
+ * Removes non-positive numbers from the queue
+ * 
+ * Example of the second part
+ * Queue: (1) -1 3 4
+ * () - Front
+ * 
+ * Process:
+ *   1) Remember Address: [-1]
+ *   2) Make Connection:  [1] -> [3]
+ *   3) Delete: [-1]
+ *   4) Start from the front
+ */
 void deleteNonpositive(struct node *&front, struct node *&rear)
 {
     if ( !front )
@@ -134,23 +148,20 @@ void deleteNonpositive(struct node *&front, struct node *&rear)
 
     struct node *curr = front;
    
-    ///Is head node nonPositive?
-    while (front && front->item < 0)
+    /// Deteles non-positives from front
+    while (front && front->item < 1)
     {
         front = front->next;
         delete curr;
         curr = front;
     }
     
-    ///All head nodes are positive
-    while (curr && curr->next)
+    /// Deletes non-positives from the rest of the queue
+    while (curr->next)
     {
         if (curr->next->item < 1)
         {
-            ///create temp to store the address of the node to delete
             struct node *temp = curr->next;
-
-            ///Set current -> next to node after one we want to delete
             curr->next = curr->next->next;
 
             delete temp;
