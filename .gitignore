@@ -4,6 +4,9 @@ obj/
 
 *.dSYM/
 main
+*.o
+*.out
+*.exe
 
 
 # CodeBlocks files
