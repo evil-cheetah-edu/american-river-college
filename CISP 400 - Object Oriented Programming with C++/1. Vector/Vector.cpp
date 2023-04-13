@@ -22,8 +22,9 @@ Vector<T>::Vector(const T* a, unsigned s, int Vindex)
     _size   = 0;
     _length = 0;
     _zero   = Vindex;
+    
     for(unsigned i = 0; i < s; ++i)
-        operator+=(a[i]);
+        operator+=( a[i] );
 }
 
 
@@ -36,7 +37,7 @@ Vector<T>::Vector(const Vector& v)
     _zero   = v._zero;
 
     for (unsigned i = 0; i < v._length; ++i)
-        operator+= (v._a[i]);
+        operator+=( v._a[i] );
 }
 
 
@@ -50,26 +51,27 @@ Vector<T>::~Vector()
 
 ///-------------- Operators --------------///
 template <typename T>
-Vector<T>& Vector<T>::operator= (const Vector<T>& v)
+Vector<T>& Vector<T>::operator=(const Vector<T>& v)
 {
     if (this == &v)
         return *this;
 
     delete [] _a;
+
     _a      = NULL;
     _size   = 0;
     _length = 0;
     _zero   = v._zero;
 
     for(unsigned i = 0; i < v._length; ++i)
-        operator+=(v._a[i]);
+        operator+=( v._a[i] );
 
     return *this;
 }
 
 
 template <typename OT>
-ostream& operator<< (ostream& os, const Vector<OT>& v)
+ostream& operator<<(ostream& os, const Vector<OT>& v)
 {
     if (v._length != 0)
     {
@@ -87,7 +89,7 @@ ostream& operator<< (ostream& os, const Vector<OT>& v)
 }
 
 template <typename OT>
-ostream& operator<< (ostream& os, const Vector<OT>* v)
+ostream& operator<<(ostream& os, const Vector<OT>* v)
 {
     if ((*v)._length != 0)
     {
@@ -102,7 +104,7 @@ ostream& operator<< (ostream& os, const Vector<OT>* v)
 
 
 template <typename T>
-T& Vector<T>::operator[] (int Vindex)
+T& Vector<T>::operator[](int Vindex)
 {
     int Aindex = Vindex - _zero;
     if (Aindex >= 0 && Aindex < _length)
@@ -117,9 +119,10 @@ T& Vector<T>::operator[] (int Vindex)
 
 
 template <typename T>
-const T& Vector<T>::operator[] (int Vindex) const
+const T& Vector<T>::operator[](int Vindex) const
 {
     int Aindex = Vindex - _zero;
+    
     if (Aindex >= 0 && Aindex < _length)
     {
         return _a[Aindex];
@@ -132,13 +135,13 @@ const T& Vector<T>::operator[] (int Vindex) const
 
 
 template <typename T>
-Vector<T> Vector<T>::operator() (int Vfirst, int Vlast) const
+Vector<T> Vector<T>::operator()(int Vfirst, int Vlast) const
 {
     int Afirst  = Vfirst - _zero;
     int Alast   = Vlast  - _zero;
 
-	if ( (Vlast - Vfirst) < 0 )
-		throw unsigned(403);
+    if ( (Vlast - Vfirst) < 0 )
+        throw unsigned(403);
 
     Vector<T> temp(_zero);
 
@@ -152,11 +155,11 @@ Vector<T> Vector<T>::operator() (int Vfirst, int Vlast) const
 
 
 template <typename T>
-Vector<T>& Vector<T>::operator+= (const T& item)
+Vector<T>& Vector<T>::operator+=(const T& item)
 {
     if (_length >= _size)
     {
-        _size   = (_size == 0)? 1 : (_size * 2);
+        _size   = (_size == 0) ? 1 : (_size * 2);
         T* temp = new T[_size];
         for (unsigned i = 0; i < _length; ++i)
             temp[i] = _a[i];
@@ -171,7 +174,7 @@ Vector<T>& Vector<T>::operator+= (const T& item)
 
 
 template <typename T>
-Vector<T>& Vector<T>::operator+= (const Vector& v)
+Vector<T>& Vector<T>::operator+=(const Vector& v)
 {
     for (unsigned i = 0; i < v._length; ++i)
         operator+=(v._a[i]);
@@ -219,7 +222,7 @@ void Vector<T>::Remove()
 
 
 template <typename T>
-void Vector<T>::Insert (const T& item, int Vindex)
+void Vector<T>::Insert(const T& item, int Vindex)
 {
     int Aindex = Vindex - _zero;
     if (Aindex < 0 || Aindex >= _length)
@@ -238,7 +241,7 @@ void Vector<T>::Insert (const T& item, int Vindex)
 
 
 template <typename T>
-void Vector<T>::Insert (const T& item)
+void Vector<T>::Insert(const T& item)
 {
     Insert(item, _zero);
 }
@@ -246,7 +249,7 @@ void Vector<T>::Insert (const T& item)
 
 ///-------------- Read/Write --------------///
 template <typename T>
-void Vector<T>::write ( ofstream& ofs ) const
+void Vector<T>::write( ofstream& ofs ) const
 {
     if (ofs)
     {
