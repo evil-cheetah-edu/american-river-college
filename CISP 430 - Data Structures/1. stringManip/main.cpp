@@ -80,7 +80,10 @@ bool stringCompare(char *A, char *B)
 }
 
 
-void stringConcatenation (char *A, char *B)
+/**
+ * Appends content of `B` to `A`
+ */
+void stringConcatenation(char *A, char *B)
 {
     unsigned i;
     for (i = 0; A[i] != '\0'; ++i);
