@@ -26,14 +26,13 @@ node* Merge(node* &list1, node* &list2);
 
 int main()
 {
-    ///list to NULL to avoid SEG_FAULT
+    /// Instantiate to avoid garbage values
     node *mainList = nullptr,
             *List1 = nullptr,
             *List2 = nullptr;
 
     ReadFile(mainList);
 
-    ///for check only
     cout << "mainList: ";
     Traverse(mainList);
     cout << endl;
