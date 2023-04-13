@@ -145,18 +145,18 @@ void  SplitMerge(node* mList, node* list1, node* list2)
 }
 
 
-
+/**
+ * Goes over linkedList and outputs its data
+ */
 void Traverse(node* head)
 {
     while (head)
     {
         cout << head->data << ' ';
-        string temp = head->data;
         head = head->next;
     }
     cout << endl;
 }
-
 
 
 node* Merge(node* &list1, node* &list2)
