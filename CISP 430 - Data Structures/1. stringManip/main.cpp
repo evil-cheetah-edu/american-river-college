@@ -1,6 +1,14 @@
 #include <iostream>
 #include <fstream>
+
+
 using namespace std;
+
+
+///or input.txt, was kind of unclear in manual
+ifstream in("in.txt");
+const unsigned MAX_SIZE = 20;
+
 
 void stringCopy(char *A, char *B);
 bool stringCompare(char *A, char *B);
@@ -8,11 +16,9 @@ void stringConcatenation (char *A, char *B);
 int  stringPosition(char *A, char B);
 int  stringLength(char *A);
 
-///or input.txt, was kind of unclear in manual
-ifstream in("in.txt");
-const unsigned MAX_SIZE = 20;
 
-int main(){
+int main()
+{
    char a[MAX_SIZE],
         b[MAX_SIZE];
 
@@ -30,7 +36,9 @@ int main(){
 	cout << a << endl;
 
 	in >> a >> b;
-	cout << "Char \"" << b[0] << "\" is situated at " << stringPosition(a, b[0]) << endl;
+	cout << "Char \"" << b[0] 
+         << "\" is situated at " << stringPosition(a, b[0])
+         << endl;
 
     in >> a >> b;
     cout << "String length = " << stringLength(a) << endl;
