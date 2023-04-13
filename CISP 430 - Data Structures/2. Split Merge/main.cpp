@@ -1,6 +1,13 @@
 #include <iostream>
 #include <fstream>
+
+
 using namespace std;
+
+
+///failed to pass ifstream in fnct
+///lies in global
+ifstream in("input.txt");
 
 
 ///Node struct
@@ -10,15 +17,13 @@ struct node
     node* next;
 };
 
-///failed to pass ifstream in fnct
-///lies in global
-ifstream in("input.txt");
 
 void  addNode(node* &head, string data);
 void  ReadFile(node* &head);
 void  SplitMerge(node* mList, node* list1, node* list2);
 void  Traverse(node* head);
 node* Merge(node* &list1, node* &list2);
+
 
 int main()
 {
@@ -35,7 +40,6 @@ int main()
     cout << endl;
 
     SplitMerge(mainList, List1, List2);
-
 
     return 0;
 }
