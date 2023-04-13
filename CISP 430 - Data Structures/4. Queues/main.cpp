@@ -67,19 +67,22 @@ void enqueue(int item, struct node *&front, struct node *&rear)
     rear = newNode;
 }
 
+/**
+ * Removes first item from the queue 
+ */
 void dequeue(struct node *&front, struct node *&rear)
 {
-    struct node *temp;
-
-    if (front)
+    if ( !front )
     {
-        temp = front;
-        front = front->next;
-        delete temp;
-
-        if (!front)
-            rear = nullptr;
-        }
+        rear = nullptr;
+        return;
+    }
+ 
+    struct node *temp;
+    temp  = front;
+    front = front->next;
+    
+    delete temp;
 }
 
 ///Read the vars from the file
