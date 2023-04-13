@@ -10,3 +10,6 @@ main
 *.cbp
 *.depend
 *.layout
+
+# MacOS Specific Files
+**/.DS_Store
