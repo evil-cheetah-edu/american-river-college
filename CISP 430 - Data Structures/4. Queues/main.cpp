@@ -33,7 +33,7 @@ int main()
    cout << "After deleting: " << endl;
    display(front, rear);
 
-   in.close()
+   in.close();
    
    return 0;
 }
