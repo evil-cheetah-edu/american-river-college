@@ -110,19 +110,36 @@ int  stringPosition(char *A, char B)
     return -1;
 }
 
+
+/**
+ * Obtains the number of characters, and prepends
+ * it in the front of the array.
+ * 
+ * Returns: stringLength
+ * 
+ * Disclaimer: Has a typo in storing number of
+ * characters implementation; however, was an
+ * accepted solution 
+ */
 int stringLength(char *A)
 {
     unsigned numChars;
     char temp[MAX_SIZE];
 
+    /// Get number of characters
     for (numChars = 0; A[numChars] != '\0'; ++numChars);
 
+    /// Copy content of `A` into `temp`
     for (unsigned i = 0; i < numChars; ++i)
         temp[i] = A[i];
 
+    /// Store number of characters
     A[0] = char(numChars) + 48;
+ 
+    /// Copy content of `temp` into `A`
     for (unsigned i = 1; i <= numChars; ++i)
         A[i] = temp[i - 1];
+ 
     A[numChars + 1] = '\0';
 
     return numChars;
