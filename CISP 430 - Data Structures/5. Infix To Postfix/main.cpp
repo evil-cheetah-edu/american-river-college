@@ -61,16 +61,15 @@ int main()
  * Checks whether the character is operand using
  * ASCII values
  * 
- * Can be: number or a variable
+ * Accepted values: number or a variable
  */
 bool isOperand(char c)
 {
-    ///[48, 57]  is 0..9
-    ///[65, 90]  is A..Z
-    ///[97, 122] is a..z
-    return ((48 <= c && c <= 57) || 
-            (65 <= c && c <= 90) ||
-            (97 <= c && c <= 122));
+    return (
+        (ASCII_DIGIT_ZERO  <= c && c <= ASCII_DIGIT_NINE ) ||
+        (ASCII_UPPERCASE_A <= c && c <= ASCII_UPPERCASE_Z) ||
+        (ASCII_LOWERCASE_A <= c && c <= ASCII_LOWERCASE_Z)
+    );
 }
 
 
