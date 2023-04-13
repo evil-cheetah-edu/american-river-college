@@ -15,6 +15,7 @@ ___
 
 ## Specifications
 All necessary specification are located in `main.cpp` file within the comments.
+In addition to that, please, review [zyBooks - Requirements](./zyBooks%20-%20Requirements.pdf)
 ___
 `Requirements`:
 Implement the following function according to the description located in `main.cpp`:

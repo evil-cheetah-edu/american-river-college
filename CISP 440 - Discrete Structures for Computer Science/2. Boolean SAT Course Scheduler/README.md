@@ -14,3 +14,5 @@ ___
 - Output the rows that meet criteria
 - Create a function `initTable` that initializes a table of courses
 - Create a function `isRowSat` that checks for the following criteria
+___
+In addition to that, please, review [zyBooks - Requirements](./zyBooks%20-%20Requirements.pdf)

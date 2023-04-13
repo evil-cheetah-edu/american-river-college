@@ -9,7 +9,7 @@ Given enums:
 
 ___
 `Requirements`:
-- Create a CLI program that follows the requirements from `zyBooks - Requirements` file
+- Create a CLI program that follows the requirements from [zyBooks - Requirements file](./zyBooks%20-%20Requirements.pdf)
 - Simulates Gumball machine using Finite State Machine Requirements
 ___
 ## Machine State Diagram
