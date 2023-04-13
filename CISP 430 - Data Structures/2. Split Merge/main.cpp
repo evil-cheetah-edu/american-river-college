@@ -67,16 +67,20 @@ void addNode(node* &head, string data)
 }
 
 
-
+/**
+ * Reads the data from the file
+ * 
+ * For future me:
+ *      Using `in >> fileData` to safely put line into
+ *      variable. Avoids EOF
+ * 
+ */
 void ReadFile(node* &head)
 {
     string fileData;
-    ///in >> fileData to avoid going in code block at EOF
-    ///at the same time assigns the data from File to var
+
     while ( in >> fileData )
-    {
         addNode(head, fileData);
-    }
 }
 
 
