@@ -82,10 +82,14 @@ void readFile(string &inPut)
         getline(in, inPut);
 }
 
-///Stack functions
-void  pop(struct node *&top)
+
+/**
+ * Copy of function from `assingment 3`
+ */
+void pop(struct node *&top)
 {
     struct node *temp;
+
     if (top)
     {
         temp = top;
@@ -94,15 +98,19 @@ void  pop(struct node *&top)
     }
 }
 
+/**
+ * Copy of function from `assingment 3`
+ */
 void push(struct node *&top, char item)
 {
     struct node *newNode = new node;
 
     newNode->item = item;
     newNode->next = top;
+
     top = newNode;
 }
-//////////////////
+
 
 
 int precedence(char c)
