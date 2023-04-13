@@ -1,19 +1,62 @@
 #include <iostream>
+
+
 using namespace std;
 
-enum Q{q0, q5, q10, q15, q20};
-enum O{GUMBALL, RETURN, MESSAGE, NONE, INVALID};
-enum I{NICKEL, DIME, BUY, QUIT};
 
-const string Q_STRINGS[] = {"q0", "q5", "q10", "q15", "q20"};
-const string O_STRINGS[] = {"Gumball dispensed.  Have a nice day.\n",
-                            "Exact change required.  Returning coin.\n",
-                            "Insufficient funds.  Cannot buy.\n",
-                            "",
-                            "Invalid input.\n"};
-const string I_STRINGS[] = {"NICKEL", "DIME", "BUY", "QUIT"};
+enum Q
+{
+    q0,
+    q5,
+    q10,
+    q15,
+    q20
+};
+
+enum O
+{
+    GUMBALL,
+    RETURN,
+    MESSAGE,
+    NONE,
+    INVALID
+};
+
+enum I
+{
+    NICKEL,
+    DIME,
+    BUY,
+    QUIT
+};
+
+
+const string Q_STRINGS[] = {
+    "q0",
+    "q5",
+    "q10",
+    "q15",
+    "q20"
+};
+
+const string O_STRINGS[] = {
+    "Gumball dispensed.  Have a nice day.\n",
+    "Exact change required.  Returning coin.\n",
+    "Insufficient funds.  Cannot buy.\n",
+    "",
+    "Invalid input.\n"
+};
+
+const string I_STRINGS[] = {
+    "NICKEL",
+    "DIME",
+    "BUY",
+    "QUIT"
+};
+
 
 const string PROMPT_STRING = "NICKEL, DIME, BUY, or QUIT: ";
+
 
 int main()
 {
