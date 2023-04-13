@@ -38,6 +38,9 @@ int main()
 }
 
 
+/**
+ * Pops top node from stack
+ */
 void pop(struct node *&top)
 {
    struct node *temp;
@@ -51,6 +54,9 @@ void pop(struct node *&top)
 }
 
 
+/**
+ * Pushes new node to the top of the stack
+ */
 void push(struct node *&top, char item)
 {
    struct node *newNode = new node;
