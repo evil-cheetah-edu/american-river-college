@@ -129,10 +129,13 @@ void display(struct node *&front, struct node *&rear)
 
 void deleteNonpositive(struct node *&front, struct node *&rear)
 {
+    if ( !front )
+        return;
+
     struct node *curr = front;
    
     ///Is head node nonPositive?
-    while (front->item < 0)
+    while (front && front->item < 0)
     {
         front = front->next;
         delete curr;
@@ -140,7 +143,7 @@ void deleteNonpositive(struct node *&front, struct node *&rear)
     }
     
     ///All head nodes are positive
-    while (curr->next)
+    while (curr && curr->next)
     {
         if (curr->next->item < 1)
         {
