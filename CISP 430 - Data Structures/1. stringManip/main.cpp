@@ -65,6 +65,10 @@ void stringCopy(char *A, char *B)
     A[i] = '\0';
 }
 
+
+/**
+ * Checks if strings are equal
+ */
 bool stringCompare(char *A, char *B)
 {
 
@@ -74,6 +78,7 @@ bool stringCompare(char *A, char *B)
 
     return true;
 }
+
 
 void stringConcatenation (char *A, char *B)
 {
