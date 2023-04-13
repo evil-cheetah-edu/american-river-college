@@ -31,6 +31,11 @@ int main()
 }
 
 
+/**
+ * @brief Initializes boolean table with all possible combinations
+ * 
+ * @param table instance of uninitialized table of boolean combinations
+ */
 void initTable(bool table[1024][10])
 {
     ///Initial was (i >> j) & 1
@@ -45,12 +50,16 @@ void printTable(bool table[1024][10])
 /// 
 {
     for (unsigned i = 0; i < 1024; ++i)
-    {
-        for (unsigned j = 0; j < 10; ++j)
-            cout << (table[i][j] ? 'T' : 'F')  << ' ';
+        printRow(table[i]);
+}
 
-        cout << endl;
-    }
+
+void printRow(bool row[10])
+{
+    for (unsigned i = 0; i < 10; ++i)
+        cout << (row[i] ? 'T' : 'F') << ' ';
+
+    cout << endl;
 }
 
 
@@ -80,12 +89,4 @@ bool isRowSat(bool row[10])
         !(row[4] && row[8]) && !(row[5] && row[9])
     );
 
-}
-
-void printRow(bool row[10])
-{
-    for (unsigned i = 0; i < 10; ++i)
-        cout << (row[i] ? 'T' : 'F') << ' ';
-
-    cout << endl;
 }
