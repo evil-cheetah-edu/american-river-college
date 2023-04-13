@@ -8,6 +8,7 @@ I. [CISP 400 - Object Oriented Programming with C++](./CISP%20400%20-%20Object%2
 II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
   1. [stringManip](./CISP%20430%20-%20Data%20Structures/1.%20stringManip/)
   2. [Split Merge](./CISP%20430%20-%20Data%20Structures/2.%20Split%20Merge/)
+  3. [Stack Conversion](./CISP%20430%20-%20Data%20Structures/3.%20Stack%20Conversion/)
 
 
 III. [CISP 440 - Discrete Structures for Computer Science](./CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science/)
