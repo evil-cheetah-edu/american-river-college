@@ -17,6 +17,9 @@ int  stringPosition(char *A, char B);
 int  stringLength(char *A);
 
 
+/**
+ * Tests functionality of the implemented functions
+ */
 int main()
 {
    char a[MAX_SIZE],
@@ -48,15 +51,18 @@ int main()
 	return 0;
 }
 
+
+/**
+ * Copies the content of `B` into `A`
+ */
 void stringCopy(char *A, char *B)
 {
     unsigned i;
-    for (i = 0; B[i] != '\0'; ++i)
-    {
-        A[i] = B[i];
-    }
-    A[i] = '\0';
 
+    for (i = 0; B[i] != '\0'; ++i)
+        A[i] = B[i];
+        
+    A[i] = '\0';
 }
 
 bool stringCompare(char *A, char *B)
