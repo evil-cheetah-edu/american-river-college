@@ -8,6 +8,8 @@ main
 *.out
 *.exe
 
+# VSCode files
+.vscode/
 
 # CodeBlocks files
 *.cbp
