@@ -1,7 +1,11 @@
 #include <iostream>
 #include <iomanip>
+
 #include "parser.h"
+
+
 using namespace std;
+
 
 #define MAX_ROWS 8
 #define MAX_COLS 10
@@ -20,24 +24,14 @@ int initTable(string symbols[], bool table[MAX_ROWS][MAX_COLS])
 
 	for (int i = 0; i < 8; ++i)
 	{
+        /// Copy conditions into table
 		for (int j = 0; j < 3; ++j)
 			table[i][j] = conditions[j];
 
-///Basic(more readable) way
-		if (!conditions[2])
-		{
-			if (!conditions[1])
-				conditions[0] = !conditions[0];
-
-            conditions[1] = !conditions[1];
-        }
-        conditions[2] = !conditions[2];
-/*
-///Fancy(easy to edit) way
-        conditions[0]  = ((!conditions[1] && !conditions[0]) ? 0 : 1);
-        conditions[1]  = (!conditions[2] ? 0 : 1);
-        conditions[2] = !conditions[2];
-        */
+        /// Binary Counter approach
+        conditions[0]  = (!conditions[1] && !conditions[0]) ? 0 : 1;
+        conditions[1]  =  !conditions[2] ? 0 : 1;
+        conditions[2]  =  !conditions[2];
     }
 
     return 3;
@@ -85,21 +79,21 @@ int appendColumn(string statement, string symbols[], bool table[MAX_ROWS][MAX_CO
 ///If your code makes it through the loop without returning false, then return true
 bool isValid(bool table[MAX_ROWS][MAX_COLS], int numProps)
 {
-    bool allTrue = true;
+    bool isTrueHypothesis = true;
+
     for (int i = 0; i < MAX_ROWS; ++i)
     {
         for (int j = 0; j < numProps; ++j)
         {
             if(!table[i][j])
-                allTrue = false;
+                isTrueHypothesis = false;
         }
 
-        if (allTrue && !table[i][numProps])
+        if (isTrueHypothesis && !table[i][numProps])
             return false;
 
-        allTrue = true;
+        isTrueHypothesis = true;
     }
-
 
     return true;
 }
