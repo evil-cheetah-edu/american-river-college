@@ -84,50 +84,55 @@ void ReadFile(node* &head)
 }
 
 
-
+/**
+ * Splits the linkedList, traverses sublists,
+ * merges them back.
+ * 
+ * Throws following exceptions:
+ *  - int(100) - When linkedList is empty
+ *  - int(200) - When linkedList has odd number of items
+ */
 void  SplitMerge(node* mList, node* list1, node* list2)
 {
     node       *curr = mList;
     node *mergedList = nullptr;
 
-    ///checks if the list is empty
+    /// Checks for Empty
     if ( !curr )
         throw int(100);
 
-    ///If passed then at least 1 thing is on the list
-    unsigned numItems = 1;
 
-    ///counts the num of items
+    /// Count number of items
+    unsigned numItems = 1;
     for (; curr->next; numItems++)
         curr = curr->next;
 
-    ///From directions: "...divides ... linked list into two equal sublists..."
     ///Check if even
     if ( (numItems % 2) == 1)
         throw unsigned(200);
 
-    ///changes curr to the beginning
+
     curr = mList;
 
-    ///sets first half based on counter
+    /// First Sub-List
     for(unsigned i = 0; i < (numItems / 2); ++i)
     {
         addNode(list1, curr->data);
         curr = curr->next;
     }
 
-    ///set second half based on curr status
+    /// Second Sub-List
     while (curr)
     {
         addNode(list2, curr->data);
         curr = curr->next;
     }
 
-    ///output first one
+
+    /// Output sub-lists    
     cout << "list1: ";
     Traverse(list1);
 
-    ///output second one
     cout << "list2: ";
     Traverse(list2);
     cout << endl;
