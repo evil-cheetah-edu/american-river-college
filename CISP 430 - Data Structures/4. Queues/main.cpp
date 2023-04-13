@@ -19,7 +19,7 @@ void enqueue (int item, struct node *&front, struct node *&rear);
 void dequeue (struct node *&front, struct node *&rear);
 void readfile(struct node *&front, struct node *&rear);
 void display (struct node *&front, struct node *&rear);
-void displayOnly (struct node* front);
+void traverse (struct node* front);
 void deleteNonpositive(struct node *&front, struct node *&rear);
 
 
@@ -33,7 +33,7 @@ int main()
     readfile(front, rear);
    
     cout << "Numbers:" << endl;
-    displayOnly(front);
+    traverse(front);
     cout << endl << endl;
     
     deleteNonpositive(front,rear);
@@ -87,7 +87,7 @@ void readfile(struct node *&front, struct node *&rear)
         enqueue(temp, front, rear);
 }
 
-void displayOnly(struct node* front)
+void traverse(struct node* front)
 {
     while (front)
     {
