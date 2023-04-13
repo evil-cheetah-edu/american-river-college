@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
+
 
 struct node
 {
@@ -9,13 +11,15 @@ struct node
    node *next;
 };
 
+
 void   pop(struct node *&top);
 void   push(struct node *&top, char item);
 
 string decToBin(struct node *&top, unsigned userNum);
-string decToHex(struct node *&top, unsigned userNum);
 
+string decToHex(struct node *&top, unsigned userNum);
 string stackToString(struct node *&top);
+
 
 int main()
 {
@@ -37,7 +41,6 @@ int main()
 }
 
 
-
 void pop(struct node *&top)
 {
    struct node *temp;
@@ -50,6 +53,7 @@ void pop(struct node *&top)
    }
 }
 
+
 void push(struct node *&top, char item)
 {
    struct node *newNode = new node;
@@ -59,6 +63,7 @@ void push(struct node *&top, char item)
 
    top = newNode;
 }
+
 
 string decToBin(struct node *&top, unsigned userInput)
 {
@@ -74,6 +79,7 @@ string decToBin(struct node *&top, unsigned userInput)
    
    return stackToString(top);
 }
+
 
 string decToHex(struct node *&top, unsigned userInput)
 {
