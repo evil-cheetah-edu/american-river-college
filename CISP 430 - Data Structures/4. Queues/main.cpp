@@ -85,14 +85,18 @@ void dequeue(struct node *&front, struct node *&rear)
     delete temp;
 }
 
-///Read the vars from the file
+
+/**
+ * Reads data into queue
+ */
 void readfile(struct node *&front, struct node *&rear)
 {
-    int temp;
+    int number;
 
-    while (in >> temp)
-        enqueue(temp, front, rear);
+    while (in >> number)
+        enqueue(number, front, rear);
 }
+
 
 void traverse(struct node* front)
 {
