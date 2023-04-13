@@ -96,6 +96,11 @@ void stringConcatenation(char *A, char *B)
     A[i] = '\0';
 }
 
+
+/**
+ * Returns an index of char `B` in string `A`
+ * If not found, returns `-1` 
+ */
 int  stringPosition(char *A, char B)
 {
     for (unsigned i = 0; A[i] != '\0'; ++i)
