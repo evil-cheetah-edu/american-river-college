@@ -22,13 +22,12 @@ void display (struct node *&front, struct node *&rear);
 void deleteNonpositive(struct node *&front, struct node *&rear);
 
 
-///Main of the program
 int main()
 {
     struct node *front,
                 *rear;
 
-    front = rear = NULL;
+    front = rear = nullptr;
 
     readfile(front, rear);
     cout << "Number:" << endl;
@@ -48,7 +47,7 @@ void enqueue(int item, struct node *&front, struct node *&rear)
     struct node *newNode = new node;
     
     newNode->item = item;
-    newNode->next = NULL;
+    newNode->next = nullptr;
 
     if (rear)
     { 
@@ -70,7 +69,7 @@ void dequeue(struct node *&front, struct node *&rear)
         delete temp;
 
         if (!front)
-            rear = NULL;
+            rear = nullptr;
         }
 }
 
