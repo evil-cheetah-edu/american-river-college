@@ -23,7 +23,6 @@ string stackToString(struct node *&top);
 
 int main()
 {
-   ///Precondition: "...will be integers and > 0"
    unsigned userInput;
    struct node *top = nullptr;
 
@@ -31,8 +30,6 @@ int main()
    cin >> userInput;
   
    cout << endl << endl;
-
-
    cout << "Your Number:    " << userInput << endl;
    cout << "In Binary:      " << decToBin(top, userInput) << endl;
    cout << "In Hexadecimal: " << decToHex(top, userInput) << endl;
