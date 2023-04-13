@@ -8,4 +8,5 @@ I. [CISP 440 - Discrete Structures for Computer Science](https://github.com/Evil
   2. [SAT Course Scheduler](https://github.com/EvilCheetah/coursework/tree/master/CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science/2.%20Boolean%20SAT%20Course%20Scheduler)
   3. [Gumball Machine](https://github.com/EvilCheetah/coursework/tree/master/CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science/3.%20Gumball%20Machine)
 
-II. CISP 430 - Data Structures
+II. [CISP 430 - Data Structures](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures)
+  1. [stringManip](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/1.%20stringManip)
