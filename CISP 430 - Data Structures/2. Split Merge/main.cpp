@@ -5,8 +5,7 @@
 using namespace std;
 
 
-///failed to pass ifstream in fnct
-///lies in global
+/// Unable to pass `ifstream` as parameter
 ifstream in("input.txt");
 
 
