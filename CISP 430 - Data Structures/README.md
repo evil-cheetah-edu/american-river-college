@@ -7,3 +7,4 @@ ___
 1. [stringManip](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/1.%20stringManip)
 2. [Merge Split](https://github.com/EvilCheetah/coursework/tree/master/CISP%20430%20-%20Data%20Structures/2.%20Split%20Merge)
 3. [Stack Conversion](./3.%20Stack%20Conversion/)
+4. [Queues](./4.%20Queues/)
