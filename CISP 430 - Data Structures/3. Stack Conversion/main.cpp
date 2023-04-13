@@ -76,6 +76,9 @@ void push(struct node *&top, char item)
 }
 
 
+/**
+ * Converts a number from Decimal to Binary
+ */
 string decToBin(struct node *&top, unsigned userInput)
 {
    while(userInput != 0)
@@ -92,6 +95,9 @@ string decToBin(struct node *&top, unsigned userInput)
 }
 
 
+/**
+ * Converts a number from Decimal to Hexidecimal
+ */
 string decToHex(struct node *&top, unsigned userInput)
 {
    string converted = "";
@@ -113,7 +119,6 @@ string decToHex(struct node *&top, unsigned userInput)
    }
 
    return stackToString(top);
-
 }
 
 
