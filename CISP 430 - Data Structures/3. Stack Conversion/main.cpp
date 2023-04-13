@@ -5,6 +5,14 @@
 using namespace std;
 
 
+const int BINARY_BASE         =  2;
+const int HEXADECIMAL_BASE    = 16; 
+const int HEXADECIMAL_LETTER  = 10;
+
+const int ASCII_NUMBER_OFFSET = 48;
+const int ASCII_LETTER_OFFSET = 65;
+
+
 struct node
 {
    char data;
@@ -72,12 +80,12 @@ string decToBin(struct node *&top, unsigned userInput)
 {
    while(userInput != 0)
    {
-      char temp;
-      ///0 or 1 in ASCII table
-      temp = userInput % 2 + 48;
-      push(top, temp);
+      char decimal_value;
+
+      decimal_value = userInput % BINARY_BASE + ASCII_NUMBER_OFFSET;
+      push(top, decimal_value);
       
-      userInput /= 2;
+      userInput /= BINARY_BASE;
    }
    
    return stackToString(top);
@@ -90,18 +98,18 @@ string decToHex(struct node *&top, unsigned userInput)
 
    while (userInput != 0)
    {
-      char temp;
-      temp = userInput % 16;
+      char decimal_value;
+      decimal_value = userInput % HEXADECIMAL_BASE;
       
       ///If hex-val is a number
-      if (temp < 10)
-         push(top, (temp + 48));
+      if (decimal_value < HEXADECIMAL_LETTER)
+         push(top, (decimal_value + ASCII_NUMBER_OFFSET));
       
       ///If hex-val is a letter
       else
-         push(top, (temp + 55));
+         push(top, (decimal_value % HEXADECIMAL_LETTER + ASCII_LETTER_OFFSET));
       
-      userInput /= 16;
+      userInput /= HEXADECIMAL_BASE;
    }
 
    return stackToString(top);
