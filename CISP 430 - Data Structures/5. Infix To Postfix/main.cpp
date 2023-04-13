@@ -73,12 +73,13 @@ bool isOperand(char c)
 }
 
 
+/**
+ * Reads the first line into inPut
+ */
 void readFile(string &inPut)
 {
     if (in)
-    {
         getline(in, inPut);
-    }
 }
 
 ///Stack functions
