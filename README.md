@@ -4,6 +4,7 @@ This repository has been created to hold the solutions for the assignments relat
 
 ## Table of Content
 I. [CISP 400 - Object Oriented Programming with C++](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/)
+  1. [Final - Vector Class](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/1.%20Vector/)
 
 II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
   1. [stringManip](./CISP%20430%20-%20Data%20Structures/1.%20stringManip/)
