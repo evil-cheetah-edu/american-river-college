@@ -1,8 +1,10 @@
 #include "Vector.h"
 
+
 using namespace std;
 
-///--------------Constructors--------------///
+
+///-------------- Constructors --------------///
 template <typename T>
 Vector<T>::Vector(int Vindex)
 {
@@ -20,10 +22,10 @@ Vector<T>::Vector(const T* a, unsigned s, int Vindex)
     _size   = 0;
     _length = 0;
     _zero   = Vindex;
-    
     for(unsigned i = 0; i < s; ++i)
         operator+=(a[i]);
 }
+
 
 template <typename T>
 Vector<T>::Vector(const Vector& v)
@@ -37,14 +39,16 @@ Vector<T>::Vector(const Vector& v)
         operator+= (v._a[i]);
 }
 
-///--------------Destructor--------------///
+
+///-------------- Destructor --------------///
 template <typename T>
 Vector<T>::~Vector()
 {
     delete [] _a;
 }
 
-///--------------OperatorsX--------------///
+
+///-------------- Operators --------------///
 template <typename T>
 Vector<T>& Vector<T>::operator= (const Vector<T>& v)
 {
@@ -96,6 +100,7 @@ ostream& operator<< (ostream& os, const Vector<OT>* v)
     }
 }
 
+
 template <typename T>
 T& Vector<T>::operator[] (int Vindex)
 {
@@ -110,6 +115,7 @@ T& Vector<T>::operator[] (int Vindex)
     }
 }
 
+
 template <typename T>
 const T& Vector<T>::operator[] (int Vindex) const
 {
@@ -123,6 +129,7 @@ const T& Vector<T>::operator[] (int Vindex) const
         throw unsigned(402);
     }
 }
+
 
 template <typename T>
 Vector<T> Vector<T>::operator() (int Vfirst, int Vlast) const
@@ -143,6 +150,7 @@ Vector<T> Vector<T>::operator() (int Vfirst, int Vlast) const
     return temp;
 }
 
+
 template <typename T>
 Vector<T>& Vector<T>::operator+= (const T& item)
 {
@@ -160,6 +168,7 @@ Vector<T>& Vector<T>::operator+= (const T& item)
 
     return *this;
 }
+
 
 template <typename T>
 Vector<T>& Vector<T>::operator+= (const Vector& v)
@@ -193,6 +202,7 @@ void Vector<T>::Remove(const int Vindex)
     *this = temp;
 }
 
+
 template <typename T>
 void Vector<T>::Remove(int Vfirst, int Vlast)
 {
@@ -200,11 +210,13 @@ void Vector<T>::Remove(int Vfirst, int Vlast)
         Remove(Vfirst);
 }
 
+
 template <typename T>
 void Vector<T>::Remove()
 {
     Remove(_zero);
 }
+
 
 template <typename T>
 void Vector<T>::Insert (const T& item, int Vindex)
@@ -224,14 +236,15 @@ void Vector<T>::Insert (const T& item, int Vindex)
     *this = temp;
 }
 
+
 template <typename T>
 void Vector<T>::Insert (const T& item)
 {
     Insert(item, _zero);
 }
 
-///--------------Read/Write--------------///
 
+///-------------- Read/Write --------------///
 template <typename T>
 void Vector<T>::write ( ofstream& ofs ) const
 {
@@ -246,6 +259,7 @@ void Vector<T>::write ( ofstream& ofs ) const
         throw unsigned(500);
     }
 }
+
 
 template <typename T>
 void  Vector<T>::read(ifstream& ifs)
