@@ -32,9 +32,13 @@ int main()
 
 
 /**
- * @brief Initializes boolean table with all possible combinations
+ * Brief: Initializes a course table with all combinations
  * 
- * @param table instance of uninitialized table of boolean combinations
+ * Uses bitwise operators to get a boolean value of a cell
+ * based on its indeces
+ * 
+ * Initially based on: https://bit.ly/3KVCRwj
+ * More on that: https://bit.ly/406NmRI 
  */
 void initTable(bool table[1024][10])
 {
@@ -45,15 +49,23 @@ void initTable(bool table[1024][10])
 
 }
 
-
+/**
+ * Brief: Prints full table
+ * 
+ * Used for debugging purposes.
+ */
 void printTable(bool table[1024][10])
-/// 
 {
     for (unsigned i = 0; i < 1024; ++i)
         printRow(table[i]);
 }
 
 
+/**
+ * Brief: Prints a single row
+ * 
+ * Used for debugging purposes
+ */
 void printRow(bool row[10])
 {
     for (unsigned i = 0; i < 10; ++i)
@@ -63,30 +75,37 @@ void printRow(bool row[10])
 }
 
 
+/**
+ * Brief: Checks the criteria from the requirements
+ * 
+ * Initially, checks if the course exists exactly
+ * one time. Then checks the if combination of
+ * courses does not violate the criteria.
+ * 
+ * Criteria from requirements:
+ * - (A, B), (B, E), (D, C), (C, E)
+ */
 bool isRowSat(bool row[10])
 {
-    ///False if ((A, B), (B, E), (D, C), (C, E))
     return (
-        ///Subject doesn't exist on both periods
-        ///A
+        /// Subject A
         (row[0] || row[1]) && !(row[0] && row[1]) &&
-        ///B
+        /// Subject B
         (row[2] || row[3]) && !(row[2] && row[3]) &&
-        ///C
+        /// Subject C
         (row[4] || row[5]) && !(row[4] && row[5]) &&
-        ///D
+        /// Subject D
         (row[6] || row[7]) && !(row[6] && row[7]) &&
-        ///E
+        /// Subject E
         (row[8] || row[9]) && !(row[8] && row[9]) &&
 
-        ///(A, B)
+        /// Check criteria (A, B)
         !(row[0] && row[2]) && !(row[1] && row[3]) &&
-        ///(B, E)
+        /// Check criteria (B, E)
         !(row[2] && row[8]) && !(row[3] && row[9]) &&
-        ///(D, C)
+        /// Check criteria (D, C)
         !(row[6] && row[4]) && !(row[7] && row[5]) &&
-        ///(C, E)
+        /// Check criteria (C, E)
         !(row[4] && row[8]) && !(row[5] && row[9])
     );
-
 }
