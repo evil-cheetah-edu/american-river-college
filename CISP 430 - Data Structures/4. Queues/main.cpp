@@ -36,7 +36,7 @@ int main()
     traverse(front);
     cout << endl << endl;
     
-    deleteNonpositive(front,rear);
+    deleteNonpositive(front, rear);
     
     cout << "After deleting: " << endl;
     display(front, rear);
@@ -47,6 +47,9 @@ int main()
 }
 
 
+/**
+ * Add an item to the back of the queue 
+ */
 void enqueue(int item, struct node *&front, struct node *&rear)
 {
     struct node *newNode = new node;
@@ -54,13 +57,14 @@ void enqueue(int item, struct node *&front, struct node *&rear)
     newNode->item = item;
     newNode->next = nullptr;
 
-    if (rear)
+    if ( !rear )
     { 
-        rear->next = newNode;
-        rear = newNode;
-    }
-    else
         front = rear = newNode;
+        return;
+    }
+    
+    rear->next = newNode;
+    rear = newNode;
 }
 
 void dequeue(struct node *&front, struct node *&rear)
