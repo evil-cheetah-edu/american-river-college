@@ -9,7 +9,7 @@ using namespace std;
 ifstream in("input.txt");
 
 
-///Node struct
+/// Linked List Node struct
 struct node
 {
     string data;
