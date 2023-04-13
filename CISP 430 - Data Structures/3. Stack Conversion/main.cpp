@@ -25,7 +25,7 @@ int main()
 {
    ///Precondition: "...will be integers and > 0"
    unsigned userInput;
-   struct node *top = NULL;
+   struct node *top = nullptr;
 
    cout << "Enter the number:" << endl;
    cin >> userInput;
