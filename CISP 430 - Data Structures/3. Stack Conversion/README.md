@@ -5,3 +5,6 @@ ___
 ## Pre-Condition
 `All passed numbers will be integers and > 0`  
 © Specifications File
+___
+## Changes
+Refatored conversion functions using `global const` values for better readability.
