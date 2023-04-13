@@ -8,6 +8,13 @@ using namespace std;
 
 ifstream in("input.txt");
 
+const char ASCII_DIGIT_ZERO  =  48;
+const char ASCII_DIGIT_NINE  =  57;
+const char ASCII_UPPERCASE_A =  65;
+const char ASCII_UPPERCASE_Z =  90;
+const char ASCII_LOWERCASE_A =  97;
+const char ASCII_LOWERCASE_Z = 122;
+
 
 struct node
 {
@@ -50,6 +57,12 @@ int main()
 }
 
 
+/**
+ * Checks whether the character is operand using
+ * ASCII values
+ * 
+ * Can be: number or a variable
+ */
 bool isOperand(char c)
 {
     ///[48, 57]  is 0..9
@@ -59,6 +72,7 @@ bool isOperand(char c)
             (65 <= c && c <= 90) ||
             (97 <= c && c <= 122));
 }
+
 
 void readFile(string &inPut)
 {
