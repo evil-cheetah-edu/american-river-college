@@ -179,6 +179,9 @@ Date incrementDate(const Date& date)
 }
 
 
+/**
+ * Checks if date is within accepted range 
+*/
 bool wellFormed(const Date& date)
 {
     return (MIN_DATE <= date && date <= MAX_DATE);
