@@ -17,6 +17,10 @@ typedef unsigned Date;
 const unsigned MIN_DATE =  1010001;
 const unsigned MAX_DATE = 12319999;
 
+const unsigned YEAR_POSITION_START  = 1;
+const unsigned DAY_POSITION_START   = YEAR_POSITION_START * 10000;
+const unsigned MONTH_POSITION_START = DAY_POSITION_START  *   100;
+
 
 enum DATE_STYLE {MM_DD_YYYY, MON_DD_YYYY};
 
@@ -87,9 +91,16 @@ int nthDigit(unsigned number, unsigned index)
 }
 
 
-Date makeDate(unsigned m, unsigned d, unsigned y)
+/**
+ * Returns a formatted as date unassigned integer
+*/
+Date makeDate(unsigned month, unsigned day, unsigned year)
 {
-    return m * 1000000 + d * 10000 + y;
+    return (
+        month * MONTH_POSITION_START +
+        day   * DAY_POSITION_START   +
+        year  * YEAR_POSITION_START
+    );
 }
 
 
