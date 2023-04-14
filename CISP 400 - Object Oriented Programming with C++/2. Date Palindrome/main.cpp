@@ -58,14 +58,19 @@ int main()
 }
 
 
-unsigned numDigits(unsigned num)
+/**
+ * Returns the number of digits in the number
+*/
+unsigned numDigits(unsigned number)
 {
     unsigned length = 1;
-    while (num > 9)
+    
+    while ( number > 9 )
     {
-        num /= 10;
-        length++;
+        number /= 10;
+        ++length;
     }
+
     return length;
 }
 
