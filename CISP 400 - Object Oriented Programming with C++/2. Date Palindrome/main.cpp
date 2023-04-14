@@ -75,12 +75,15 @@ unsigned numDigits(unsigned number)
 }
 
 
-int nthDigit(unsigned num, unsigned nth)
+/**
+ * Returns a digit at index from the back in number
+*/
+int nthDigit(unsigned number, unsigned index)
 {
-    for (unsigned i = 0; i < nth; i++)
-            num /= 10;
+    for (unsigned i = 0; i < index; i++)
+            number /= 10;
 
-    return num % 10;
+    return number % 10;
 }
 
 
