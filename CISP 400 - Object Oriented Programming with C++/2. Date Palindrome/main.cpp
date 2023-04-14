@@ -21,6 +21,11 @@ const unsigned YEAR_POSITION_START  = 1;
 const unsigned DAY_POSITION_START   = YEAR_POSITION_START * 10000;
 const unsigned MONTH_POSITION_START = DAY_POSITION_START  *   100;
 
+string MONTH_ABBREVIATIONS[] = {
+    "Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ",
+    "Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "
+};
+
 
 enum DATE_STYLE {MM_DD_YYYY, MON_DD_YYYY};
 
@@ -104,6 +109,11 @@ Date makeDate(unsigned month, unsigned day, unsigned year)
 }
 
 
+/**
+ * Displays a date in one of two formats:
+ *   - MM/DD/YYYY,   AKA `%m/%d/%Y`
+ *   - Mon DD, YYYY, AKA `%b %d, %Y`
+*/
 void displayDate(const Date& date, ostream& out, DATE_STYLE style)
 {
     if ( !wellFormed(date) )
@@ -112,36 +122,37 @@ void displayDate(const Date& date, ostream& out, DATE_STYLE style)
         exit(1);
     }
 
-
     unsigned m = month(date),
              d = day(date),
              y = year(date);
 
-    if (style == MM_DD_YYYY)
+    switch (style)
     {
-        if (m < 10)
-                out << '0';
-        out << m << '/';
-        if (d < 10)
-                out << '0';
-        out << d << '/';
+        case (MM_DD_YYYY):
+            if (m < 10) { out << '0'; }
+            out << m << '/';
+            if (d < 10) { out << '0'; }
+            out << d << '/';
+
+            break;
+        
+        case (MON_DD_YYYY):
+            out << MONTH_ABBREVIATIONS[m - 1];
+            if ( d < 10) { out << '0'; }
+            out << d << ", ";
+
+            break;
+
+        default:
+            cout << "Unknown date format" << endl;
+            exit(1);
     }
 
-    else if (style == MON_DD_YYYY)
-    {
-        string months[] = {"Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ",
-                            "Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "};
-        out << months[m - 1];
-        if ( d < 10)
-                out << '0';
-        out << d << ", ";
-    }
+    unsigned num_of_leading_zeros = 4 - numDigits(y);
 
-
-    ///checking for leading zeros
-    unsigned zeroNum = 4 - numDigits(y);
-    for (unsigned i = 0; i < zeroNum; i++)
+    for (unsigned i = 0; i < num_of_leading_zeros; ++i)
         out << '0';
+
     out << y << endl;
 }
 
