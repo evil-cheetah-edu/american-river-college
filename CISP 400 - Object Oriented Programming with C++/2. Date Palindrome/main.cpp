@@ -1,11 +1,10 @@
-/*************************
+/**
+ * Eugene Moshchyn
+ * CISP 400 - MW 5:30 pm - 6:50 pm
+ * Programming Project #1
+ * February 13, 2019 
+**/
 
-Eugene Moshchyn
-CISP 400 - MW 5:30 pm - 6:50 pm
-Programming Project #1
-February 13, 2019
-
-*************************/
 
 #include <iostream>
 using namespace std;
