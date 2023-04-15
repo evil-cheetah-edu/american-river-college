@@ -116,11 +116,7 @@ Date makeDate(unsigned month, unsigned day, unsigned year)
 */
 void displayDate(const Date& date, ostream& out, DATE_STYLE style)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     unsigned month_value = month(date),
              day_value   = day(date),
@@ -162,12 +158,7 @@ void displayDate(const Date& date, ostream& out, DATE_STYLE style)
 */
 Date incrementDate(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n!";
-        exit(1);
-    }
-
+    wellFormed(date);
 
     unsigned monthNum = month(date),
              dayNum   = day(date),
@@ -198,18 +189,23 @@ Date incrementDate(const Date& date)
 */
 bool wellFormed(const Date& date)
 {
-    return (MIN_DATE <= date && date <= MAX_DATE);
+    if ( MIN_DATE <= date && date <= MAX_DATE )
+    {
+        cout << "Date Error!"                        << endl
+             << "The following date"
+             << "DOES NOT fall into accepted range:" << endl
+             << date                                 << endl;
+        
+        exit(1);
+    }
+
+    return true;
 }
 
 
 unsigned month(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
-
+    wellFormed(date);
 
     if (numDigits(date) == 7)
         return nthDigit(date, 6);
@@ -221,11 +217,7 @@ unsigned month(const Date& date)
 
 unsigned day(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     return (nthDigit(date, 5) * 10 + nthDigit(date, 4));
 }
@@ -233,11 +225,7 @@ unsigned day(const Date& date)
 
 unsigned year(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     unsigned yearNum = 0;
     for (unsigned i = 3; i > 0; i--)
@@ -253,11 +241,7 @@ unsigned year(const Date& date)
 
 bool isLeapYear(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     if ((year(date) % 400) == 0)
         return true;
@@ -275,11 +259,7 @@ bool isLeapYear(const Date& date)
 
 unsigned monthLength(const Date& date)
 {
-    if ( !wellFormed(date) )
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     unsigned monthNum = month(date);
     if ( (monthNum < 8  && monthNum % 2 == 1) || (monthNum >= 8  && monthNum % 2 == 0) )
@@ -294,17 +274,8 @@ unsigned monthLength(const Date& date)
 
 bool lessThan(const Date& date1, const Date& date2)
 {
-    if ( !wellFormed(date1) )
-    {
-        cout << "Date #1 Error!\n";
-        exit(1);
-    }
-
-    if ( !wellFormed(date2) )
-    {
-        cout << "Date #2 Error!\n";
-        exit(1);
-    }
+    wellFormed(date1);
+    wellFormed(date2);
 
     if (year(date1) == year(date2) && month(date1) == month(date2))
         return day(date1) < day(date2);
@@ -319,11 +290,7 @@ bool lessThan(const Date& date1, const Date& date2)
 
 bool isPalindrome(const Date& date)
 {
-    if (!wellFormed(date))
-    {
-        cout << "Date Error!\n";
-        exit(1);
-    }
+    wellFormed(date);
 
     unsigned nums = numDigits(date);
     if (nums == 7)
