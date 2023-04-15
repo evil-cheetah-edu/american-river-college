@@ -157,6 +157,9 @@ void displayDate(const Date& date, ostream& out, DATE_STYLE style)
 }
 
 
+/**
+ * Increments a date by `1 day`
+*/
 Date incrementDate(const Date& date)
 {
     if ( !wellFormed(date) )
