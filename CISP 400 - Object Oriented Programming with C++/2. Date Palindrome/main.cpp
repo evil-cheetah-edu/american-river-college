@@ -122,24 +122,24 @@ void displayDate(const Date& date, ostream& out, DATE_STYLE style)
         exit(1);
     }
 
-    unsigned m = month(date),
-             d = day(date),
-             y = year(date);
+    unsigned month_value = month(date),
+             day_value   = day(date),
+             year_value  = year(date);
 
     switch (style)
     {
         case (MM_DD_YYYY):
-            if (m < 10) { out << '0'; }
-            out << m << '/';
-            if (d < 10) { out << '0'; }
-            out << d << '/';
+            if (month_value < 10) { out << '0'; }
+            out << month_value << '/';
+            if (day_value < 10) { out << '0'; }
+            out << day_value   << '/';
 
             break;
         
         case (MON_DD_YYYY):
-            out << MONTH_ABBREVIATIONS[m - 1];
-            if ( d < 10) { out << '0'; }
-            out << d << ", ";
+            out << MONTH_ABBREVIATIONS[month_value - 1];
+            if ( day_value < 10) { out << '0'; }
+            out << day_value << ", ";
 
             break;
 
@@ -148,12 +148,12 @@ void displayDate(const Date& date, ostream& out, DATE_STYLE style)
             exit(1);
     }
 
-    unsigned num_of_leading_zeros = 4 - numDigits(y);
+    unsigned num_of_leading_zeros = 4 - numDigits(year_value);
 
     for (unsigned i = 0; i < num_of_leading_zeros; ++i)
         out << '0';
 
-    out << y << endl;
+    out << year_value << endl;
 }
 
 
