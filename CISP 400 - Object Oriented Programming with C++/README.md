@@ -7,4 +7,5 @@ This course is an introduction to the C++ programming language and object-orient
 1. [Introduction Project - Hello World](./1.%20Intro/)
 2. [Midterm Project - Date Palindrome](./2.%20Date%20Palindrome/)
 3. [Midterm Project - Rational Class](./3.%20Rational/)
+4. [Midterm Project - Marina](./4.%20Marina/)
 5. [Final Project - Vector Class](./5.%20Vector/)

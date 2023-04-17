@@ -7,6 +7,7 @@ I. [CISP 400 - Object Oriented Programming with C++](./CISP%20400%20-%20Object%2
   1. [Introduction Project - Hello World](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/1.%20Intro/)
   2. [Midterm Project - Date Palindrome](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/2.%20Date%20Palindrome/)
   3. [Midterm Project - Rational Class](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/3.%20Rational/)
+  4. [Midterm Project - Marina](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/4.%20Marina/)
   5. [Final Project - Vector Class](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/5.%20Vector/)
 
 II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
