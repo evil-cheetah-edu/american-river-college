@@ -90,11 +90,10 @@ void readFile(string &inPut)
 **/
 int charToInt(char c)
 {
-    if (isDigit(c))
-        return (c - '0');
-
-    else
+    if ( !isDigit(c) )
         throw int(-1);
+
+    return (c - '0');
 }
 
 
