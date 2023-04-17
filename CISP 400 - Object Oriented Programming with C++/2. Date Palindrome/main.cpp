@@ -164,23 +164,16 @@ Date incrementDate(const Date& date)
              day_value   = day(date),
              year_value  = year(date);
 
+
     if (1 <= day_value && day_value < monthLength(date))
-        day_value++;
+        return makeDate(month_value, ++day_value, year_value);
 
-    else
-        if (1 <= month_value && month_value < 12)
-        {
-            day_value = 1;
-            month_value++;
-        }
-        else
-        {
-            day_value   = 1;
-            month_value = 1;
-            year_value++;
-        }
+    
+    if (1 <= month_value && month_value < 12)
+        return makeDate(++month_value, 01, year_value);
 
-    return makeDate(month_value, day_value, year_value);
+
+    return makeDate(01, 01, ++year_value);
 }
 
 
