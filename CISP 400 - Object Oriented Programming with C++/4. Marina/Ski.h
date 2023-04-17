@@ -7,30 +7,34 @@
 
 
 #include <iostream>
-using namespace std;
 #include "MotorPowered.h"
+
+
+using namespace std;
+
 
 #ifndef SKI_H_
 #define SKI_H_
 
+
 class Ski: public MotorPowered
 {
-  public:
-    Ski();
-    Ski(double disp, double len, double beam, const char* name, bool bfp, FUEL_TYPE = GASOLINE, MOTOR_DRIVE_TYPE = OUTBOARD, HULL_TYPE = PLANING);
-    Ski(const char* name);
-    ~Ski();
+    public:
+        Ski();
+        Ski(double disp, double len, double beam, const char* name, bool bfp, FUEL_TYPE = GASOLINE, MOTOR_DRIVE_TYPE = OUTBOARD, HULL_TYPE = PLANING);
+        Ski(const char* name);
+        ~Ski();
 
-    void Set_Barefoot_Pole( bool );
-    bool Get_Barefoot_Pole() const;
+        void Set_Barefoot_Pole( bool );
+        bool Get_Barefoot_Pole() const;
 
-    virtual void Propulsion_Maintenance();
-    virtual void Emergency_Procedures();
-    virtual void Display() const;
+        virtual void Propulsion_Maintenance();
+        virtual void Emergency_Procedures();
+        virtual void Display() const;
 
-  private:
-    bool _barefoot_pole;
-
+    private:
+        bool _barefoot_pole;
 };
+
 
 #endif
