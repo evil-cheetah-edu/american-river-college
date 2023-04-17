@@ -56,7 +56,9 @@ int main()
 }
 
 
-///Reads the data in from the file
+/**
+ * Reads the data in from the file
+**/
 void readIn(struct node* &head, struct node* &tail)
 {
     cout << "Readin begin..." << endl;
@@ -71,7 +73,9 @@ void readIn(struct node* &head, struct node* &tail)
 }
 
 
-///Outputs the List values without deleting
+/**
+ * Outputs the List values without deleting
+**/
 void traverse(struct node* &head, struct node* &tail)
 {
     if ( !head )
@@ -90,7 +94,7 @@ void traverse(struct node* &head, struct node* &tail)
     }
 }
 
-///Inserts Data to the end
+
 void insertDouble(string name, struct node* &head, struct node* &tail)
 {
     node* newNode = new node;
@@ -131,7 +135,10 @@ void cleanUp(struct node* &head, struct node* &tail)
 }
 
 
-///Deletes nodes and takes care if userNum > ListSize
+/**
+ * Deletes nodes
+ * Also, takes care if `Nodes of Nodes to Delete` is greater than `List Size`
+**/
 void deleteNodes(unsigned number, struct node* &head, struct node* &tail)
 {
     if ( number > countNodes(head, tail) )
@@ -146,8 +153,10 @@ void deleteNodes(unsigned number, struct node* &head, struct node* &tail)
 }
 
 
-///Deletes head
-///No need to protect, protected in DeleteNodes()
+/**
+ * Deletes `head`
+ * Edge case is taken care of in `deleteNodes`
+**/
 void deleteFirstNode(struct node* &head, struct node* &tail)
 {
     struct node* curr = head;
@@ -159,7 +168,6 @@ void deleteFirstNode(struct node* &head, struct node* &tail)
     {
         head = head->next;
 
-        ///Assigning next and prev for nearby Nodes
         curr->next->prev = curr->prev;
         curr->prev->next = curr->next;
     }
@@ -168,11 +176,12 @@ void deleteFirstNode(struct node* &head, struct node* &tail)
 }
 
 
-///Count List Size
+/**
+ * Gets size of linked list
+**/
 unsigned countNodes(struct node* &head, struct node* &tail)
 {
-    ///No head => size = 0
-    if (!head)
+    if ( !head )
         return 0;
 
 
