@@ -124,7 +124,7 @@ int calc(int a, int b, char oper)
 
 int evaluateExpression(string &inPut)
 {
-    struct node *top = NULL;
+    struct node *top = nullptr;
     int result;
 
     for (unsigned i = 0; i < inPut.size(); ++i)
