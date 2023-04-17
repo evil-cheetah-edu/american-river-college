@@ -106,16 +106,15 @@ void insertDouble(string name, struct node* &head, struct node* &tail)
     {
         newNode->next = newNode->prev = newNode;
         head = tail = newNode;
+
+        return;
     }
 
-    else
-    {
-        newNode->next = tail->next;
-        tail->next = newNode;
-        newNode->next->prev = newNode;
-        newNode->prev = tail;
-        tail = newNode;
-    }
+    newNode->next = tail->next;
+    tail->next = newNode;
+    newNode->next->prev = newNode;
+    newNode->prev = tail;
+    tail = newNode;
 }
 
 
