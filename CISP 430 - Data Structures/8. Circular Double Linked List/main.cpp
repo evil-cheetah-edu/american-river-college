@@ -31,7 +31,7 @@ unsigned countNodes(struct node* &head, struct node* &tail);
 int main()
 {
     struct node *head, *tail;
-    head = tail = NULL;
+    head = tail = nullptr;
 
     unsigned userNumber;
 
@@ -132,7 +132,7 @@ void cleanUp(struct node* &head, struct node* &tail)
     }
     delete temp;
 
-    head = tail = NULL;
+    head = tail = nullptr;
 }
 
 
@@ -163,7 +163,7 @@ void deleteFirstNode(struct node* &head, struct node* &tail)
     struct node* curr = head;
 
     if (head == tail)
-        head = tail = NULL;
+        head = tail = nullptr;
 
     else
     {
