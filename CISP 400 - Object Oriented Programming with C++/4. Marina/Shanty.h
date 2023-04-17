@@ -1,11 +1,9 @@
-/*
-
-Eugene Moshchyn
-CISP 400 - 5:00 pm
-Programming Project #4
-April 3, 2019
-
-*/
+/**
+ * Eugene Moshchyn
+ * CISP 400 - 5:00 pm
+ * Programming Project #4
+ * April 3, 2019
+**/
 
 
 #include <iostream>

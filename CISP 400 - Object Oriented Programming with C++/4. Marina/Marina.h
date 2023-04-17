@@ -1,11 +1,10 @@
-/*
+/**
+ * Eugene Moshchyn
+ * CISP 400 - 5:00 pm
+ * Programming Project #5
+ * April 3, 2019
+**/
 
-Eugene Moshchyn
-CISP 400 - MW 5:30 pm
-Programming Project #5
-April 3, 2019
-
-*/
 
 #ifndef MARINA_H_
 #define MARINA_H_
