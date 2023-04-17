@@ -241,6 +241,9 @@ unsigned year(const Date& date)
 }
 
 
+/**
+ * Determines a leap year by its value
+*/
 bool isLeapYear(const Date& date)
 {
     wellFormed(date);
@@ -248,14 +251,13 @@ bool isLeapYear(const Date& date)
     if ((year(date) % 400) == 0)
         return true;
 
-    else if ((year(date) % 100) == 0)
+    if ((year(date) % 100) == 0)
         return false;
 
-    else if ((year(date) % 4) == 0)
+    if ((year(date) % 4) == 0)
         return true;
 
-    else
-        return false;
+    return false;
 }
 
 
