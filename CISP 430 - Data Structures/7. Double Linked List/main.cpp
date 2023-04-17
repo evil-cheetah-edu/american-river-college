@@ -207,7 +207,9 @@ void insertDouble(string studentName, struct node* &head, struct node* &tail)
 }
 
 
-///Cleans up the memory by deleting the linked list
+/**
+ * Cleans up the memory
+**/
 void cleanUp(struct node* &head, struct node* &tail)
 {
     struct node* temp = head;
@@ -223,37 +225,38 @@ void cleanUp(struct node* &head, struct node* &tail)
 }
 
 
-///Goes through Linked list and displays
+/**
+ * Traverses Linked List
+**/
 void traverse(struct node* &head, struct node* &tail, OUTPUT_TYPE type)
 {
-    struct node* temp;
+    struct node* current;
 
     switch (type)
     {
         case (ASCENDING):
         {
-            temp = head;
-            while (temp)
+            current = head;
+            while (current)
             {
-                cout << temp->name << endl;
-                temp = temp->next;
+                cout << current->name << endl;
+                current = current->next;
             }
             break;
 
         }
         case(DESCENDING):
         {
-            temp = tail;
-            while (temp)
+            current = tail;
+            while (current)
             {
-                cout << temp->name << endl;
-                temp = temp->prev;
+                cout << current->name << endl;
+                current = current->prev;
             }
             break;
         }
 
         default:
             cout << "Unknown type was passed..." << endl;
-
     }
 }
