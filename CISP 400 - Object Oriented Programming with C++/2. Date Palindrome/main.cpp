@@ -304,29 +304,30 @@ bool lessThan(const Date& date1, const Date& date2)
 }
 
 
-
+/**
+ * Checks whether the date is Palindrome
+*/
 bool isPalindrome(const Date& date)
 {
     wellFormed(date);
 
     unsigned number_of_digits = numDigits(date);
 
-    if (number_of_digits == SINGLE_DIGIT_MONTH_DATE_LENGTH)
-    {
-        if (nthDigit(date, 0) != 0)
-            return false;
-
-        for (unsigned i = 1; i < ((number_of_digits + 1) / 2); i++)
-            if ( nthDigit(date, i) != nthDigit(date, number_of_digits - i) )
-                return false;
-    }
-
-    else
+    /// Check Date Length to be 8 Digits
+    if (number_of_digits != SINGLE_DIGIT_MONTH_DATE_LENGTH)
     {
         for (unsigned i = 0; i < (number_of_digits / 2); i++)
             if ( nthDigit(date, i) != nthDigit(date, number_of_digits - 1 - i) )
                 return false;
     }
+
+    /// Date Length is 7 Digits
+    if (nthDigit(date, 0) != 0)
+        return false;
+
+    for (unsigned i = 1; i < ((number_of_digits + 1) / 2); i++)
+        if ( nthDigit(date, i) != nthDigit(date, number_of_digits - i) )
+            return false;
 
    return true;
 }
