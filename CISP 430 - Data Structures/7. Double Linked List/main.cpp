@@ -79,56 +79,55 @@ void readIn(struct node* &head, struct node* &tail)
 }
 
 
-///Deletes the Node with particular name
+/**
+ * Deletes a node with specified name
+**/
 void deleteNodeWithName(string input, struct node* &head, struct node* &tail)
 {
-    struct node* curr = head;
+    struct node* current = head;
 
     cout << "Deleting from the list: " << input << endl;
-    ///Checks if list consist of anything
-    if (!curr)
+
+    if (!current)
     {
         cout << "List is empty..." << endl;
         return;
     }
-    else
+
+    while (current)
     {
-        while (curr)
+        if ( !isEqual(current->name, input) )
         {
-            ///Found match => delete it
-            if (isEqual(curr->name, input))
-            {
-                ///Is situated inbetween Head and Tail
-                if (curr->next && curr->prev)
-                {
-                    curr->prev->next = curr->next;
-                    curr->next->prev = curr->prev;
-                }
-                ///Is situated at Position of Head
-                else if (!curr->prev)
-                {
-                    curr->next->prev = NULL;
-                    head = curr->next;
-                }
-                ///Is situated at position of Tail
-                else if (!curr->next)
-                {
-                    curr->prev->next = NULL;
-                    tail = curr->prev;
-                }
-                ///deletes after match and terminates the funcion
-                delete curr;
-                return;
-            }
-            ///Not found => go to next
-            else
-                curr = curr->next;
+            current = current->next;
+            continue;
         }
-        ///If goes through the list and founds nothing
-        ///=>Element doesn't exist in the list
-        cout << "There is no person on the list with name: " << input << endl;
+
+        ///Is situated inbetween Head and Tail
+        if (current->next && current->prev)
+        {
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+        }
+        ///Is situated at Position of Head
+        else if (!current->prev)
+        {
+            current->next->prev = NULL;
+            head = current->next;
+        }
+        ///Is situated at position of Tail
+        else if (!current->next)
+        {
+            current->prev->next = NULL;
+            tail = current->prev;
+        }
+
+        delete current;
+        return;
     }
+
+    cout << "There is no person on the list with name: " << input << endl;
 }
+
 
 
 ///Compares two strings without case sensitivity
