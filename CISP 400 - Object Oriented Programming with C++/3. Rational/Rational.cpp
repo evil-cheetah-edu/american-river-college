@@ -315,7 +315,11 @@ bool operator<=(long long l, const Rational& r)
 }
 
 
-Rational Rational::operator++(int) //post
+/**
+ * Postfix Increment
+ * I.e. `i++`
+*/
+Rational Rational::operator++(int)
 {
     Rational temp(*this);
     *this += 1;
@@ -324,7 +328,11 @@ Rational Rational::operator++(int) //post
 }
 
 
-Rational  Rational::operator--(int) //post
+/**
+ * Postfix Decrement
+ * I.e. `i--`
+*/
+Rational  Rational::operator--(int)
 {
     Rational temp(*this);
     *this -= 1;
@@ -333,20 +341,31 @@ Rational  Rational::operator--(int) //post
 }
 
 
-Rational& Rational::operator++()    //pre
+/**
+ * Prefix Increment
+ * I.e. `++i`
+*/
+Rational& Rational::operator++()
 {
     return *this += 1;
 }
 
-Rational& Rational::operator--()    //pre
+
+/**
+ * Prefix Decrement
+ * I.e. `--i`
+*/
+Rational& Rational::operator--()
 {
     return *this -= 1;
 }
+
 
 Rational  Rational::operator-() const
 {
     return Rational(-_p, _q);
 }
+
 
 Rational  Rational::operator+() const
 {
