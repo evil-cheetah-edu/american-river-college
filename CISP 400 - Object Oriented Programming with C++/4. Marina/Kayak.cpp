@@ -72,17 +72,10 @@ void Kayak::Emergency_Procedures()
 void Kayak::Display() const
 {
     MusclePowered::Display();
-    cout << "   White Water: ";
-    switch (_white_water)
-    {
-        case (true):
-            cout << "Is PRESENT";
-            break;
-        default:
-            cout << "Is NOT Present";
-            break;
-    }
-    cout << endl;
+    cout << "   White Water: "
+         << (_white_water ? "Is Present"
+                          : "Is NOT present")
+         << endl;
 }
 
 
