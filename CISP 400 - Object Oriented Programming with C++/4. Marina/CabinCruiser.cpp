@@ -71,13 +71,8 @@ void CabinCruiser::Display() const
 {
     MotorPowered::Display();
 
-    cout << "   Flying Bridge: ";
-    
-    switch(_flying_bridge)
-    {
-        case (true):  cout << "Is INSTALLED";     break;
-        default:      cout << "Is NOT Installed"; break;
-    }
-
-    cout << endl;
+    cout << "   Flying Bridge: "
+         << (_flying_bridge ? "Is INSTALLED"
+                            : "Is NOT installed")
+         << endl;
 }
