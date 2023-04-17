@@ -10,7 +10,7 @@
 
 
 CabinCruiser::CabinCruiser()
-:MotorPowered()
+    :MotorPowered()
 {
     Set_Hull_Type(SEMI_DISP);
     Set_Fuel_Type(DIESEL);
@@ -20,7 +20,7 @@ CabinCruiser::CabinCruiser()
 
 
 CabinCruiser::CabinCruiser(double disp, double len, double beam, const char* name, bool fb, FUEL_TYPE ft, MOTOR_DRIVE_TYPE mdt, HULL_TYPE ht)
-:MotorPowered(disp, len, beam, name, ft, mdt)
+    :MotorPowered(disp, len, beam, name, ft, mdt)
 {
     Set_Hull_Type(ht);
     _flying_bridge = fb;
@@ -28,7 +28,7 @@ CabinCruiser::CabinCruiser(double disp, double len, double beam, const char* nam
 
 
 CabinCruiser::CabinCruiser(const char* name)
-:MotorPowered(name)
+    :MotorPowered(name)
 {
     Set_Hull_Type(SEMI_DISP);
     Set_Fuel_Type(DIESEL);
