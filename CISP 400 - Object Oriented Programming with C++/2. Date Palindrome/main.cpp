@@ -261,16 +261,23 @@ bool isLeapYear(const Date& date)
 }
 
 
+/**
+ * Gets number of days in month
+*/
 unsigned monthLength(const Date& date)
 {
     wellFormed(date);
 
-    unsigned monthNum = month(date);
-    if ( (monthNum < 8  && monthNum % 2 == 1) || (monthNum >= 8  && monthNum % 2 == 0) )
+    unsigned month_value = month(date);
+
+    if (
+        (month_value < 8   && month_value % 2 == 1) ||
+        (month_value >= 8  && month_value % 2 == 0)
+    )
         return 31;
 
-    if (monthNum == 2)
-        return (isLeapYear(date))? 29 : 28;
+    if (month_value == 2)
+        return ( isLeapYear(date) ? 29 : 28 );
 
     return 30;
 }
