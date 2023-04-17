@@ -97,9 +97,9 @@ int charToInt(char c)
 }
 
 
-///Simple calculator fnct
-///B - bottom of stack
-///A - top of stack
+/**
+ * Simple calculator function
+**/
 int calc(int a, int b, char oper)
 {
     switch(oper)
@@ -117,7 +117,7 @@ int calc(int a, int b, char oper)
             return b / a;
 
         default:
-            throw unsigned(13);
+            throw unsigned(501);
     }
 }
 
