@@ -190,16 +190,15 @@ Date incrementDate(const Date& date)
 bool wellFormed(const Date& date)
 {
     if ( MIN_DATE <= date && date <= MAX_DATE )
-    {
-        cout << "Date Error!"                        << endl
-             << "The following date"
-             << "DOES NOT fall into accepted range:" << endl
-             << date                                 << endl;
-        
-        exit(1);
-    }
+        return true;
 
-    return true;
+
+    cout << "Date Error!"                        << endl
+         << "The following date "
+         << "DOES NOT fall into accepted range:" << endl
+         << date                                 << endl;
+    
+    exit(1);
 }
 
 
