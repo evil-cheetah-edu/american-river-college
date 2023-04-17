@@ -211,6 +211,9 @@ unsigned month(const Date& date)
 }
 
 
+/**
+ * Gets Day numeric value
+*/
 unsigned day(const Date& date)
 {
     wellFormed(date);
