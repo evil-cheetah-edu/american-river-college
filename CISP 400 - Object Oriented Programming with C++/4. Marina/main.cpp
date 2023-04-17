@@ -9,12 +9,14 @@
 #include <iostream>
 #include "Marina.h"
 
+
 using namespace std;
+
 
 int main()
 {
-  Marina m;
-  m.Run();
-  
-  return 0;
+    Marina m;
+    m.Run();
+    
+    return 0;
 }
