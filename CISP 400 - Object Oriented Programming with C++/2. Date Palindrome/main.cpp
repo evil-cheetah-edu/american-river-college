@@ -222,19 +222,22 @@ unsigned day(const Date& date)
 }
 
 
+/**
+ * Gets Year numeric value
+*/
 unsigned year(const Date& date)
 {
     wellFormed(date);
 
-    unsigned yearNum = 0;
+    unsigned year_value = 0;
     for (unsigned i = 3; i > 0; i--)
     {
-        yearNum += nthDigit(date, i);
-        yearNum *= 10;
+        year_value += nthDigit(date, i);
+        year_value *= 10;
     }
-    yearNum += nthDigit(date, 0);
+    year_value += nthDigit(date, 0);
 
-    return yearNum;
+    return year_value;
 }
 
 
