@@ -21,6 +21,8 @@ const unsigned YEAR_POSITION_START  = 1;
 const unsigned DAY_POSITION_START   = YEAR_POSITION_START * 10000;
 const unsigned MONTH_POSITION_START = DAY_POSITION_START  *   100;
 
+const unsigned SINGLE_DIGIT_MONTH_DATE_LENGTH = 7;
+
 string MONTH_ABBREVIATIONS[] = {
     "Jan ", "Feb ", "Mar ", "Apr ", "May ", "Jun ",
     "Jul ", "Aug ", "Sep ", "Oct ", "Nov ", "Dec "
@@ -204,7 +206,7 @@ unsigned month(const Date& date)
 {
     wellFormed(date);
 
-    if (numDigits(date) == 7)
+    if (numDigits(date) == SINGLE_DIGIT_MONTH_DATE_LENGTH)
         return nthDigit(date, 6);
 
     return (nthDigit(date, 7) * 10 + nthDigit(date, 6));
@@ -302,25 +304,27 @@ bool lessThan(const Date& date1, const Date& date2)
 }
 
 
+
 bool isPalindrome(const Date& date)
 {
     wellFormed(date);
 
-    unsigned nums = numDigits(date);
-    if (nums == 7)
+    unsigned number_of_digits = numDigits(date);
+
+    if (number_of_digits == SINGLE_DIGIT_MONTH_DATE_LENGTH)
     {
         if (nthDigit(date, 0) != 0)
             return false;
 
-        for (unsigned i = 1; i < ((nums + 1) / 2); i++)
-            if ( nthDigit(date, i) != nthDigit(date, nums - i) )
+        for (unsigned i = 1; i < ((number_of_digits + 1) / 2); i++)
+            if ( nthDigit(date, i) != nthDigit(date, number_of_digits - i) )
                 return false;
     }
 
     else
     {
-        for (unsigned i = 0; i < (nums / 2); i++)
-            if ( nthDigit(date, i) != nthDigit(date, nums - 1 - i) )
+        for (unsigned i = 0; i < (number_of_digits / 2); i++)
+            if ( nthDigit(date, i) != nthDigit(date, number_of_digits - 1 - i) )
                 return false;
     }
 
