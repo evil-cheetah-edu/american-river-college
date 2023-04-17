@@ -160,27 +160,27 @@ Date incrementDate(const Date& date)
 {
     wellFormed(date);
 
-    unsigned monthNum = month(date),
-             dayNum   = day(date),
-             yearNum  = year(date);
+    unsigned month_value = month(date),
+             day_value   = day(date),
+             year_value  = year(date);
 
-    if (1 <= dayNum && dayNum < monthLength(date))
-        dayNum++;
+    if (1 <= day_value && day_value < monthLength(date))
+        day_value++;
 
     else
-        if (1 <= monthNum && monthNum < 12)
+        if (1 <= month_value && month_value < 12)
         {
-            dayNum = 1;
-            monthNum++;
+            day_value = 1;
+            month_value++;
         }
         else
         {
-            dayNum   = 1;
-            monthNum = 1;
-            yearNum++;
+            day_value   = 1;
+            month_value = 1;
+            year_value++;
         }
 
-    return makeDate(monthNum, dayNum, yearNum);
+    return makeDate(month_value, day_value, year_value);
 }
 
 
