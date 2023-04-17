@@ -49,7 +49,9 @@ int main()
 }
 
 
-///Stack functions
+/**
+ * Copy of function from `assingment 3`
+**/
 void pop(struct node *&top)
 {
     struct node *temp;
@@ -63,6 +65,9 @@ void pop(struct node *&top)
 }
 
 
+/**
+ * Copy of function from `assingment 3`
+**/
 void push(struct node *&top, int item)
 {
     struct node *newNode = new node;
@@ -80,7 +85,9 @@ void readFile(string &inPut)
 }
 
 
-///Converts Char to int
+/**
+ * Converts `char` to `int`
+**/
 int charToInt(char c)
 {
     if (isDigit(c))
@@ -116,7 +123,6 @@ int calc(int a, int b, char oper)
 }
 
 
-///Evaluates expression
 int evaluateExpression(string &inPut)
 {
     struct node *top = NULL;
