@@ -130,7 +130,9 @@ void deleteNodeWithName(string input, struct node* &head, struct node* &tail)
 
 
 
-///Compares two strings without case sensitivity
+/**
+ * Compares 2 strings case insensitive
+**/
 bool isEqual(string a, string b)
 {
     a = toLowercase(a);
@@ -140,7 +142,9 @@ bool isEqual(string a, string b)
 }
 
 
-///From Uppercase to Lowercase using ASCII table
+/**
+ * From `Uppercase` to `Lowercase` using ASCII table
+**/
 string toLowercase(string a)
 {
     for (unsigned i = 0; i < a.size(); ++i)
@@ -151,6 +155,7 @@ string toLowercase(string a)
     return a;
 }
 
+
 void insertDouble(string studentName, struct node* &head, struct node* &tail)
 {
     node* newNode = new node;
@@ -158,44 +163,47 @@ void insertDouble(string studentName, struct node* &head, struct node* &tail)
 
     cout << "Inserting into list: " << studentName << endl;
 
-    if (!head)
+    if ( !head )
     {
-        ///Emptyness
         newNode->prev = NULL;
         newNode->next = NULL;
         head = newNode;
         tail = newNode;
+
+        return;
     }
-    else if (studentName < head->name)
+
+    if ( studentName < head->name )
     {
-        ///Don't forget to link them
         head->prev = newNode;
         newNode->prev = NULL;
         newNode->next = head;
         head = newNode;
+
+        return;
     }
-    else if (studentName > tail->name)
+
+    if ( studentName > tail->name )
     {
-        ///Don't forget to link them
         tail->next = newNode;
         newNode->next = NULL;
         newNode->prev = tail;
         tail = newNode;
-    }
-    else
-    {
-        ///Insert in the middle
-        struct node* curr;
-        curr = head->next;
 
-        while (studentName > curr->name && curr)
-            curr = curr->next;
-
-        newNode->next = curr->prev->next;
-        newNode->prev = curr->prev;
-        newNode->prev->next = newNode;
-        newNode->next->prev = newNode;
+        return;
     }
+
+
+    struct node* curr;
+    curr = head->next;
+
+    while (studentName > curr->name && curr)
+        curr = curr->next;
+
+    newNode->next = curr->prev->next;
+    newNode->prev = curr->prev;
+    newNode->prev->next = newNode;
+    newNode->next->prev = newNode;
 }
 
 
