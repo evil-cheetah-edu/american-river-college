@@ -31,24 +31,21 @@ int main()
     return 0;
 }
 
+
 void commaNum(long long number)
 {
-    ///Makes it work with negatives as well
     if (number < 0)
     {
         cout << '-';
         number *= -1;
     }
 
-    ///Displays the first part of the Number
     if (number < 1000)
-        cout << number;
-
-    ///Everything else goes after it with comma
-    else
     {
-        commaNum(number / 1000);
-        cout << ',' << number % 1000;
+        cout << number;
+        return;
     }
 
+    commaNum(number / 1000);
+    cout << ',' << number % 1000;
 }
