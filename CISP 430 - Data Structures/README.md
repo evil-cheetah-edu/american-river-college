@@ -10,3 +10,4 @@ ___
 4. [Queues](./4.%20Queues/)
 5. [Infix to Postfix](./5.%20Infix%20To%20Postfix/)
 6. [Postfix Evaluation](./6.%20Postfix%20Evaluation/)
+7. [Double Linked List](./7.%20Double%20Linked%20List/)
