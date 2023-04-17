@@ -55,24 +55,27 @@ int main()
 }
 
 
-///Reads the data in from the file
+/**
+ * Reads data from file
+**/
 void readIn(struct node* &head, struct node* &tail)
 {
     string input;
+
     while (in >> input)
     {
         if (input != "delete")
-            insertDouble(input, head, tail);
-
-        else
         {
-            in >> input;
-            deleteNodeWithName(input, head, tail);
+            insertDouble(input, head, tail);
+            return;
         }
+
+        in >> input;
+        deleteNodeWithName(input, head, tail);
     }
 
     cout << endl << endl;
-    cout << "Readin complete..." << endl << endl;
+    cout << "Read in complete..." << endl << endl;
 }
 
 
