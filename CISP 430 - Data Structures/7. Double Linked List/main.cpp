@@ -67,7 +67,7 @@ void readIn(struct node* &head, struct node* &tail)
         if (input != "delete")
         {
             insertDouble(input, head, tail);
-            return;
+            continue;
         }
 
         in >> input;
