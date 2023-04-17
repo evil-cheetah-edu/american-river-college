@@ -11,13 +11,15 @@
 using namespace std;
 
 
+/**
+ * Gets `Greates common denominator`
+*/
 long long _gcd(long long a, long long b)
 {
-   if (b == 0)
-      return a;
-   else
-      return _gcd(b, a % b);
+    if (b == 0)
+        return a;
 
+    return _gcd(b, a % b);
 }
 
 Rational::Rational()
