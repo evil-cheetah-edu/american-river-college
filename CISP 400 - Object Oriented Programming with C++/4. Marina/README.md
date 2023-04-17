@@ -1,6 +1,6 @@
 # Description
 ## Assignment Specifications
-`Placeholder`
+The aim of the following assignment was to familiarize us with the concepts of Inheritance and Polymorphism, along with Virtual and Pure Virtual Functions. In addition to that, it was used as a point on how to build complex applications using makefile.
 ___
 ## Starter Files
 Following starter files were provided by the Professor:
