@@ -9,8 +9,12 @@
 #ifndef _RATIONAL_H_
 #define _RATIONAL_H_
 
+
 #include <iostream>
+
+
 using namespace std;
+
 
 class Rational
 {
@@ -84,5 +88,6 @@ class Rational
       long long _p;
       long long _q;
 };
+
 
 #endif
