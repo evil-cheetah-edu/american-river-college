@@ -9,3 +9,4 @@ ___
 3. [Stack Conversion](./3.%20Stack%20Conversion/)
 4. [Queues](./4.%20Queues/)
 5. [Infix to Postfix](./5.%20Infix%20To%20Postfix/)
+6. [Postfix Evaluation](./6.%20Postfix%20Evaluation/)

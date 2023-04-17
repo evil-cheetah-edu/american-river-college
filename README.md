@@ -16,6 +16,7 @@ II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
   3. [Stack Conversion](./CISP%20430%20-%20Data%20Structures/3.%20Stack%20Conversion/)
   4. [Queues](./CISP%20430%20-%20Data%20Structures/4.%20Queues/)
   5. [Infix to Postfix](./CISP%20430%20-%20Data%20Structures/5.%20Infix%20To%20Postfix/)
+  6. [Postfix Evaluation](./CISP%20430%20-%20Data%20Structures/6.%20Postfix%20Evaluation/)
 
 
 III. [CISP 440 - Discrete Structures for Computer Science](./CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science/)
