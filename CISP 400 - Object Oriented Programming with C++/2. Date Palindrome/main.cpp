@@ -283,19 +283,22 @@ unsigned monthLength(const Date& date)
 }
 
 
+/**
+ * Checks whether `date1` is less than `date2`
+*/
 bool lessThan(const Date& date1, const Date& date2)
 {
     wellFormed(date1);
     wellFormed(date2);
 
-    if (year(date1) == year(date2) && month(date1) == month(date2))
-        return day(date1) < day(date2);
 
-    else
-        if (year(date1) == year(date2))
-            return month(date1) < month(date2);
-        else
-            return year(date1) < year(date2);
+    if ( year(date1) != year(date2) )
+        return year(date1) < year(date2);
+
+    if ( month(date1) != month(date2) )
+        return month(date1) < month(date2);
+
+    return day(date1) < day(date2);
 }
 
 
