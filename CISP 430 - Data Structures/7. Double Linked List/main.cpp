@@ -35,7 +35,7 @@ void traverse(struct node* &head, struct node* &taili, OUTPUT_TYPE type = ASCEND
 int main()
 {
     struct node *head, *tail;
-    head = tail = NULL;
+    head = tail = nullptr;
 
     readIn(head, tail);
 
@@ -111,13 +111,13 @@ void deleteNodeWithName(string input, struct node* &head, struct node* &tail)
         ///Is situated at Position of Head
         else if (!current->prev)
         {
-            current->next->prev = NULL;
+            current->next->prev = nullptr;
             head = current->next;
         }
         ///Is situated at position of Tail
         else if (!current->next)
         {
-            current->prev->next = NULL;
+            current->prev->next = nullptr;
             tail = current->prev;
         }
 
@@ -165,8 +165,8 @@ void insertDouble(string studentName, struct node* &head, struct node* &tail)
 
     if ( !head )
     {
-        newNode->prev = NULL;
-        newNode->next = NULL;
+        newNode->prev = nullptr;
+        newNode->next = nullptr;
         head = newNode;
         tail = newNode;
 
@@ -176,7 +176,7 @@ void insertDouble(string studentName, struct node* &head, struct node* &tail)
     if ( studentName < head->name )
     {
         head->prev = newNode;
-        newNode->prev = NULL;
+        newNode->prev = nullptr;
         newNode->next = head;
         head = newNode;
 
@@ -186,7 +186,7 @@ void insertDouble(string studentName, struct node* &head, struct node* &tail)
     if ( studentName > tail->name )
     {
         tail->next = newNode;
-        newNode->next = NULL;
+        newNode->next = nullptr;
         newNode->prev = tail;
         tail = newNode;
 
@@ -221,7 +221,7 @@ void cleanUp(struct node* &head, struct node* &tail)
     }
     delete temp;
 
-    head = tail = NULL;
+    head = tail = nullptr;
 }
 
 
