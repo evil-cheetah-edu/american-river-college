@@ -129,36 +129,33 @@ int evaluateExpression(string &inPut)
 
     for (unsigned i = 0; i < inPut.size(); ++i)
     {
-            ///Is a number?
-            if(isDigit(inPut[i]))
-                push( top, charToInt(inPut[i]) );
-            
-            ///Equal Sign?
-            else if (inPut[i] == '=')
-                ///Do we have top?
-                if (top)
-                    return top->item;
+        if( isDigit(inPut[i]) )
+        {
+            push( top, charToInt(inPut[i]) );
+            continue;
+        }
+        
+        if ( inPut[i] == '=' )
+        {
+            if ( !top )
+                throw unsigned(404);
 
-                else
-                    throw float(13.12);
-            
-
-            else
-            {
-                int a, b;
-                ///top
-                a = top->item;
-                pop(top);
-                
-                ///bottom
-                b = top->item;
-                pop(top);
-                
-                int c = calc(a, b, inPut[i]);
-                push(top, c);
-            }
+            return top->item;
+        }
+        
+        int a, b;
+        
+        a = top->item;
+        pop(top);
+        
+        b = top->item;
+        pop(top);
+        
+        int c = calc(a, b, inPut[i]);
+        push(top, c);
     }
-    ///top still exists
+
+    /// Top still exists
     result = top->item;
     pop(top);
 
