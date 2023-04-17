@@ -1,0 +1,16 @@
+Jim  
+jill  
+John  
+delete   jill
+Bob
+Jack  
+delete   jim
+Jackson
+Sylvester
+Michael
+Mikey
+Alex
+Gene
+Zach
+delete Jackson
+delete Igor
