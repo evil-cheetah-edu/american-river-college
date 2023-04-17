@@ -392,8 +392,9 @@ void Rational::_verify()
 {
     if (_q == 0)
     {
-        cout << "q = 0 !! \n\n";
-        cin.get();
+        cout << "Denomination CANNOT be Zero!"
+             << endl << endl;
+             
         exit(1);
     }
 
