@@ -195,6 +195,11 @@ bool wellFormed(const Date& date)
 }
 
 
+/**
+ * Gets Month numeric value.
+ * 
+ * Either single digit, or double digit
+*/
 unsigned month(const Date& date)
 {
     wellFormed(date);
@@ -202,8 +207,7 @@ unsigned month(const Date& date)
     if (numDigits(date) == 7)
         return nthDigit(date, 6);
 
-    else
-        return (nthDigit(date, 7) * 10 + nthDigit(date, 6));
+    return (nthDigit(date, 7) * 10 + nthDigit(date, 6));
 }
 
 
