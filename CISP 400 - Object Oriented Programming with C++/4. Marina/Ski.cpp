@@ -69,17 +69,8 @@ void Ski::Display() const
 {
     MotorPowered::Display();
     
-    cout << "   Barefoot Pole: ";
-    
-    switch (_barefoot_pole)
-    {
-        case (true):
-            cout << "Is INTALLED";
-            break;
-        default:
-            cout << "Is NOT Installed";
-            break;
-    }
-
-    cout << endl;
+    cout << "   Barefoot Pole: "
+         << (_barefoot_pole ? "Is INSTALLED"
+                            : "Is NOT installed")
+         << endl;
 }
