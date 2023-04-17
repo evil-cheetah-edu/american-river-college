@@ -79,19 +79,21 @@ void readIn(struct node* &head, struct node* &tail)
 void traverse(struct node* &head, struct node* &tail)
 {
     if ( !head )
-        cout << "Unable to output the list..." << endl
-             << "List is empty!" << endl;
-
-    else
     {
-        cout << "The list contains:" << endl;
-        struct node* curr = head;
-        do
-        {
-            cout << curr->name << endl;
-            curr = curr->next;
-        } while (curr != head);
+        cout << "Unable to output the list..." << endl
+             << "List is empty!"               << endl;
+
+        return;
     }
+
+    cout << "The list contains:" << endl;
+    struct node* curr = head;
+    
+    do
+    {
+        cout << curr->name << endl;
+        curr = curr->next;
+    } while (curr != head);
 }
 
 
