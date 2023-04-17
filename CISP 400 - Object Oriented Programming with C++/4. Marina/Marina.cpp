@@ -94,97 +94,105 @@ unsigned Marina::BoatMenu()
 
 void Marina::NewBoat()
 {
-    if (_num_boats < MAX_BOATS)
+    if (_num_boats >= MAX_BOATS)
     {
-        unsigned choice = BoatMenu();
-
-        switch (choice)
-        {
-            case (1):
-                _TS();
-                break;
-
-            case (2):
-                _SK();
-                break;
-
-            case (3):
-                _CC();
-                break;
-
-            case (4):
-                _KK();
-                break;
-
-            case (5):
-                _SH();
-                break;
-                
-            default:
-                cout << "Incorrect input!!!\n";
-                cin.get();
-                break;
-        }
+        cout << "Marina is FULL!" << endl;
+        return;
     }
-    else
-        cout << "Marina is FULL!\n";
+    
+
+    unsigned choice = BoatMenu();
+
+    switch (choice)
+    {
+        case (1):
+            _TS();
+            break;
+
+        case (2):
+            _SK();
+            break;
+
+        case (3):
+            _CC();
+            break;
+
+        case (4):
+            _KK();
+            break;
+
+        case (5):
+            _SH();
+            break;
+            
+        default:
+            cout << "Incorrect input!!!\n";
+            cin.get();
+            break;
+    }
 }
 
 
 void Marina::BoatsPropulsionDisplay()
 {
-    if (_num_boats > 0)
-    {
-        for (unsigned i = 0; i < _num_boats; ++i)
-        {
-            cin.get();
-            _bp[i]->Propulsion_Maintenance();
-        }
-        cin.get();
-    }
-    else
+    if ( _num_boats < 1 )
     {
         cout << "Marina is EMPTY!\n";
         cin.get();
+
+        return;
     }
+
+
+    for (unsigned i = 0; i < _num_boats; ++i)
+    {
+        cin.get();
+        _bp[i]->Propulsion_Maintenance();
+    }
+
+    cin.get();
 }
 
 
 void Marina::EmergencyProceduresDisplay()
 {
-    if (_num_boats > 0)
-    {
-        for (unsigned i = 0; i < _num_boats; ++i)
-        {
-            cin.get();
-            _bp[i]->Emergency_Procedures();
-        }
-        cin.get();
-    }
-    else
+    if ( _num_boats < 1 )
     {
         cout << "Marina is EMPTY!\n";
         cin.get();
+
+        return;
     }
+
+
+    for (unsigned i = 0; i < _num_boats; ++i)
+    {
+        cin.get();
+        _bp[i]->Emergency_Procedures();
+    }
+ 
+    cin.get();
 }
 
 
 void Marina::BoatDisplay()
 {
-    if (_num_boats > 0)
-    {
-        for (unsigned i = 0; i < _num_boats; ++i)
-        {
-            cin.get();
-            _bp[i]->Display();
-        }
-        cin.get();
-    }
-    else
+    if ( _num_boats < 1 )
     {
         cout << "Marina is EMPTY!\n";
         cin.get();
+
+        return;
     }
+
+
+    for (unsigned i = 0; i < _num_boats; ++i)
+    {
+        cin.get();
+        _bp[i]->Display();
+    }
+
+    cin.get();
 }
 
 
