@@ -1,11 +1,10 @@
-/*********************
+/**
+ * Eugene Moshchyn
+ * CISP 400 - MW 5:30 pm
+ * Programming Project #3
+ * March 13, 2019
+**/
 
-Eugene Moshchyn
-CISP 400 - MW 5:30 pm
-Programming Project #3
-March 13, 2019
-
-*********************/
 
 #include <iostream>
 #include "Rational.h"
