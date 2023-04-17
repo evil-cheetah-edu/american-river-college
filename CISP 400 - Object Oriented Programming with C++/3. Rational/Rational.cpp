@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include "Rational.h"
+
+
 using namespace std;
 
 
@@ -22,318 +24,387 @@ long long _gcd(long long a, long long b)
     return _gcd(b, a % b);
 }
 
+
 Rational::Rational()
 {
-   _p = 0;
-   _q = 1;
+    _p = 0;
+    _q = 1;
 }
+
 
 Rational::Rational(long long P, long long Q)
 {
-   _p = P;
-   _q = Q;
-   _verify();
+    _p = P;
+    _q = Q;
+    _verify();
 }
+
 
 Rational::Rational(const Rational& r)
 {
-   _p = r._p;
-   _q = r._q;
+    _p = r._p;
+    _q = r._q;
 }
 
-Rational& Rational::operator=  (const Rational& r)
+
+Rational& Rational::operator=(const Rational& r)
 {
-   if (this == &r)
-      return *this;
+    if (this == &r)
+        return *this;
 
-   _p = r._p;
-   _q = r._q;
+    _p = r._p;
+    _q = r._q;
 
-   return *this;
+    return *this;
 }
 
-//A/B + C/D = ((A*D) + (C*B)) / (B*D)
-Rational& Rational::operator+= (const Rational& r)
+
+/**
+ * A/B + C/D = ((A*D) + (C*B)) / (B*D)
+*/
+Rational& Rational::operator+=(const Rational& r)
 {
-   _p = _p*r._q + r._p*_q;
-   _q = _q * r._q;
-   _verify();
+    _p = _p*r._q + r._p*_q;
+    _q = _q * r._q;
+    _verify();
 
-   return *this;
+    return *this;
 }
 
-Rational& Rational::operator-= (const Rational& r)
+
+/**
+ * A/B - C/D = ((A*D) + (C*B)) / (B*D)
+*/
+Rational& Rational::operator-=(const Rational& r)
 {
-   _p = _p*r._q - r._p*_q;
-   _q = _q * r._q;
-   _verify();
+    _p = _p*r._q - r._p*_q;
+    _q = _q * r._q;
+    _verify();
 
-   return *this;
+    return *this;
 }
 
-//A/B * C/D = (A*C)/(B*D)
-Rational& Rational::operator*= (const Rational& r)
+
+/**
+ * A/B * C/D = (A*C)/(B*D)
+*/
+Rational& Rational::operator*=(const Rational& r)
 {
-   _p *= r._p;
-   _q *= r._q;
-   _verify();
+    _p *= r._p;
+    _q *= r._q;
+    _verify();
 
-   return *this;
+    return *this;
 }
 
-//A/B : C/D = (A*D)/(B*C)
-Rational& Rational::operator/= (const Rational& r)
+
+/**
+ * A/B : C/D = (A*D)/(B*C)
+*/
+Rational& Rational::operator/=(const Rational& r)
 {
-   _p *= r._q;
-   _q *= r._p;
-   _verify();
+    _p *= r._q;
+    _q *= r._p;
+    _verify();
 
-   return *this;
+    return *this;
 }
 
-ostream& operator<< (ostream& os, const Rational& r)
+
+ostream& operator<<(ostream& os, const Rational& r)
 {
-   os << r._p << ':' << r._q;
-   return os;
+    os << r._p << ':' << r._q;
+    return os;
 }
 
-//let user enter A:B, where : is any char
-istream& operator>> (istream& is, Rational& r)
+
+/**
+ * Let user enter `A:B`, where `:` is any char
+*/
+istream& operator>>(istream& is, Rational& r)
 {
-   long long P, Q;
-   char c;
+    long long P, Q;
+    char c;
 
-   is >> P >> c >> Q;
-   r = Rational(P, Q);
+    is >> P >> c >> Q;
+    r = Rational(P, Q);
 
-   return is;
+    return is;
 }
 
-Rational Rational::operator+ (const Rational& r) const
+
+Rational Rational::operator+(const Rational& r) const
 {
-   return Rational(*this) += r;
+    return Rational(*this) += r;
 }
 
-Rational Rational::operator+ (long long l) const
+
+Rational Rational::operator+(long long l) const
 {
-   return Rational(*this) += Rational(l);
+    return Rational(*this) += Rational(l);
 }
 
-Rational operator+ (long long l, const Rational& r)
+
+Rational operator+(long long l, const Rational& r)
 {
-   return Rational(l) += r;
+    return Rational(l) += r;
 }
 
-Rational Rational::operator- (const Rational& r) const
+
+Rational Rational::operator-(const Rational& r) const
 {
-   return Rational(*this) -= r;
+    return Rational(*this) -= r;
 }
 
-Rational Rational::operator- (long long l) const
+
+Rational Rational::operator-(long long l) const
 {
-   return Rational(*this) -= Rational(l);
+    return Rational(*this) -= Rational(l);
 }
 
-Rational operator- (long long l, const Rational& r)
+
+Rational operator-(long long l, const Rational& r)
 {
-   return Rational(l) -= r;
+    return Rational(l) -= r;
 }
 
-Rational Rational::operator* (const Rational& r) const
+
+Rational Rational::operator*(const Rational& r) const
 {
-   return Rational(*this) *= r;
+    return Rational(*this) *= r;
 }
 
-Rational Rational::operator* (long long l) const
+
+Rational Rational::operator*(long long l) const
 {
-   return Rational(*this) *= Rational(l);
+    return Rational(*this) *= Rational(l);
 }
 
-Rational operator* (long long l, const Rational& r)
+
+Rational operator*(long long l, const Rational& r)
 {
-   return (Rational(l) *= r);
+    return (Rational(l) *= r);
 }
 
-Rational Rational::operator/ (const Rational& r) const
+
+Rational Rational::operator/(const Rational& r) const
 {
-   return Rational(*this) /= r;
+    return Rational(*this) /= r;
 }
 
-Rational Rational::operator/ (long long l) const
+
+Rational Rational::operator/(long long l) const
 {
-   return Rational(*this) /= Rational(l);
+    return Rational(*this) /= Rational(l);
 }
 
-Rational operator/ (long long l, const Rational& r)
+
+Rational operator/(long long l, const Rational& r)
 {
-   return (Rational(l) /= r);
+    return (Rational(l) /= r);
 }
 
-//A/B ? C/D = (A*D ? C*B)
-bool Rational::operator== (const Rational& r) const
+
+/**
+ * A/B ? C/D = (A*D ? C*B)
+*/
+bool Rational::operator==(const Rational& r) const
 {
-   return (_p * r._q) == (_q * r._p);
+    return (_p * r._q) == (_q * r._p);
 }
 
-bool Rational::operator== (long long l) const
+
+bool Rational::operator==(long long l) const
 {
-   return *this == Rational(l);
+    return *this == Rational(l);
 }
 
-bool operator== (long long l, const Rational& r)
+
+bool operator==(long long l, const Rational& r)
 {
-   return Rational(l) == r;
+    return Rational(l) == r;
 }
 
-bool Rational::operator!= (const Rational& r) const
+
+bool Rational::operator!=(const Rational& r) const
 {
    return !(*this == r);
 }
 
-bool Rational::operator!= (long long l) const
+bool Rational::operator!=(long long l) const
 {
-   return !(*this == Rational(l));
+    return !(*this == Rational(l));
 }
 
-bool operator!= (long long l, const Rational& r)
+
+bool operator!=(long long l, const Rational& r)
 {
-   return !(Rational(l) == r);
+    return !(Rational(l) == r);
 }
 
-bool Rational::operator> (const Rational& r) const
+
+bool Rational::operator>(const Rational& r) const
 {
-   return (_p * r._q) > (_q * r._p);
+    return (_p * r._q) > (_q * r._p);
 }
 
-bool Rational::operator> (long long l) const
+
+bool Rational::operator>(long long l) const
 {
-   return *this > Rational(l);
+    return *this > Rational(l);
 }
 
-bool operator> (long long l, const Rational& r)
+
+bool operator>(long long l, const Rational& r)
 {
-   return Rational(l) > r;
+    return Rational(l) > r;
 }
 
-bool Rational::operator< (const Rational& r) const
+
+bool Rational::operator<(const Rational& r) const
 {
-   return !( *this > r || *this == r );
+    return !( *this > r || *this == r );
 }
 
-bool Rational::operator< (long long l) const
+
+bool Rational::operator<(long long l) const
 {
-   return !( *this > Rational(l) || *this == Rational(l) );
+    return !( *this > Rational(l) || *this == Rational(l) );
 }
 
-bool operator< (long long l, const Rational& r)
+
+bool operator<(long long l, const Rational& r)
 {
-   return !( Rational(l) > r || Rational(l) == r );
+    return !( Rational(l) > r || Rational(l) == r );
 }
 
-bool Rational::operator>= (const Rational& r) const
+
+bool Rational::operator>=(const Rational& r) const
 {
-  return (*this > r) || (*this == r);
+    return (*this > r) || (*this == r);
 }
 
-bool Rational::operator>= (long long l) const
+
+bool Rational::operator>=(long long l) const
 {
-   return (*this > Rational(l)) || (*this == Rational(l));
+    return (*this > Rational(l)) || (*this == Rational(l));
 }
 
-bool operator>= (long long l, const Rational& r)
+
+bool operator>=(long long l, const Rational& r)
 {
-   return (Rational(l) > r) || (Rational(l) == r);
+    return (Rational(l) > r) || (Rational(l) == r);
 }
 
-bool Rational::operator<= (const Rational& r) const
+
+bool Rational::operator<=(const Rational& r) const
 {
-   return !(*this > r);
+    return !( *this > r );
 }
 
-bool Rational::operator<= (long long l) const
+
+bool Rational::operator<=(long long l) const
 {
-   return !(*this > Rational(l));
+    return !( *this > Rational(l) );
 }
 
-bool operator<= (long long l, const Rational& r)
+
+bool operator<=(long long l, const Rational& r)
 {
-   return !(Rational(l) > r);
+    return !( Rational(l) > r );
 }
 
-Rational  Rational::operator++ (int) //post
-{
-   Rational temp(*this);
-   *this += 1;
 
-   return temp;
+Rational Rational::operator++(int) //post
+{
+    Rational temp(*this);
+    *this += 1;
+
+    return temp;
 }
 
-Rational  Rational::operator-- (int) //post
-{
-   Rational temp(*this);
-   *this -= 1;
 
-   return temp;
+Rational  Rational::operator--(int) //post
+{
+    Rational temp(*this);
+    *this -= 1;
+
+    return temp;
 }
 
-Rational& Rational::operator++ ()    //pre
+
+Rational& Rational::operator++()    //pre
 {
-   return *this += 1;
+    return *this += 1;
 }
 
-Rational& Rational::operator-- ()    //pre
+Rational& Rational::operator--()    //pre
 {
-   return *this -= 1;
+    return *this -= 1;
 }
 
-Rational  Rational::operator-  () const
+Rational  Rational::operator-() const
 {
-   return Rational(-_p, _q);
+    return Rational(-_p, _q);
 }
 
-Rational  Rational::operator+  () const
+Rational  Rational::operator+() const
 {
-   return *this;
+    return *this;
 }
 
-Rational Rational::pow(unsigned exp) const //return (*this)^exp
-{
-   if (exp == 0)
-      return Rational(1);
-   
-   long long P = _p,
-             Q = _q;
-   for (unsigned i = 1; i < exp; i++)
-   {
-      P *= _p;
-      Q *= _q;
-   }
 
-   return Rational(P, Q);
+/**
+ * Gets a Rational in power
+ * 
+ * I.e. (*this) ** exponent
+ */
+Rational Rational::pow(unsigned exponent) const
+{
+    if (exponent == 0)
+        return Rational(1);
+    
+    long long P = _p,
+              Q = _q;
+
+    for (unsigned i = 1; i < exponent; i++)
+    {
+        P *= _p;
+        Q *= _q;
+    }
+
+    return Rational(P, Q);
 }
 
-Rational Rational::inverse() const         //return (*this)^-1
+
+/**
+ * Gets an inverse of Rational
+ * 
+ * I.e. (*this) ** -1
+*/
+Rational Rational::inverse() const
 {
-   return Rational(_q, _p);
+    return Rational(_q, _p);
 }
+
 
 void Rational::_verify()
 {
-   if (_q == 0)
-   {
-       cout << "q = 0 !! \n\n";
-       cin.get();
-       exit(1);
-   }
+    if (_q == 0)
+    {
+        cout << "q = 0 !! \n\n";
+        cin.get();
+        exit(1);
+    }
 
-   long long gcd = _gcd(_p, _q);
-   
-   _p /= gcd;
-   _q /= gcd;
+    long long gcd = _gcd(_p, _q);
+    
+    _p /= gcd;
+    _q /= gcd;
 
-   if (_q < 0)
-   {
-      _p = -_p;
-      _q = -_q;
-   }
+    if (_q < 0)
+    {
+        _p = -_p;
+        _q = -_q;
+    }
 }
