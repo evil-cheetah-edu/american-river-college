@@ -180,32 +180,40 @@ void selection(int array[ROWS][COLS], int limit, int column_index)
    	}
 }
 
+
 ///Ascending by the Project Directions
 void shell(int arr[ROWS][COLS], int length, int colIndex)
 {
-	int temp;
+	int temporary;
+
 	for (int gap = length / 2; gap >= 1; gap /= 2)
 		for(int i = gap; i < length; ++i)
 			for (int j = i; j >= gap && arr[j-gap][colIndex] > arr[j][colIndex]; j -= gap)
             {
-				temp = arr[j-gap][colIndex];
+				temporary = arr[j-gap][colIndex];
 				arr[j-gap][colIndex] = arr[j][colIndex];
-				arr[j][colIndex] = temp;
+				arr[j][colIndex] = temporary;
 			}
 }
 
-///Ascending by the Project Directions
-void insertionSort(int arr[ROWS][COLS], int rowIndex)
-{
-	int tmp;
 
-	for (int i = 1; i < 4; ++i)
+/**
+ * Insertion Sort
+ *
+ * Specifications:
+ *  - Default Order: Ascending
+**/
+void insertionSort(int arr[ROWS][COLS], int row_index)
+{
+	int temporary;
+
+	for (int i = 1; i < COLS - 1; ++i)
     {
-		for (int j = i; j > 0 && arr[rowIndex][j - 1] > arr[rowIndex][j]; --j)
+		for (int j = i; j > 0 && arr[row_index][j - 1] > arr[row_index][j]; --j)
         {
-			tmp = arr[rowIndex][j];
-			arr[rowIndex][j] = arr[rowIndex][j - 1];
-			arr[rowIndex][j - 1] = tmp;
+			temporary             = arr[row_index][  j  ];
+			arr[row_index][  j  ] = arr[row_index][j - 1];
+			arr[row_index][j - 1] = temporary;
 		}
 	}
 }
