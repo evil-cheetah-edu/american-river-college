@@ -19,6 +19,7 @@ II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
   6. [Postfix Evaluation](./CISP%20430%20-%20Data%20Structures/6.%20Postfix%20Evaluation/)
   7. [Double Linked List](./CISP%20430%20-%20Data%20Structures/7.%20Double%20Linked%20List/)
   8. [Circular Double Linked List](./CISP%20430%20-%20Data%20Structures/8.%20Circular%20Double%20Linked%20List/)
+  9. [Sort Search](./CISP%20430%20-%20Data%20Structures/9.%20Sort%20Search/)
   11. [Recursion Number Sum](./CISP%20430%20-%20Data%20Structures/11.%20Recursion%20Number%20Sum/)
   12. [Recursion Comma](./CISP%20430%20-%20Data%20Structures/12.%20Recursion%20Comma/)
 
