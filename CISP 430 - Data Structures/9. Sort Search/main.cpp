@@ -232,7 +232,10 @@ void insertionSort(int arr[ROWS][COLS], int row_index)
 }
 
 
-int binarySearch(int arr[ROWS][COLS], int rowIndex, int key)
+/**
+ * Binary Search
+**/
+int binarySearch(int arr[ROWS][COLS], int row_index, int key)
 {
     int high = COLS - 1,
          low = 0,
@@ -244,10 +247,10 @@ int binarySearch(int arr[ROWS][COLS], int rowIndex, int key)
     {
         mid = (high + low ) / 2;
 
-        if (key > arr[rowIndex][mid])
+        if (key > arr[row_index][mid])
           low = mid + 1;
 
-        else if (key < arr[rowIndex][mid])
+        else if (key < arr[row_index][mid])
            high = mid - 1;
 
         else
