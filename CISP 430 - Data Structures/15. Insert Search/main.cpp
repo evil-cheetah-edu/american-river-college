@@ -59,18 +59,17 @@ int main()
 }
 
 
-///Create new Tree Node
+/**
+ * Constructs new Binary Tree
+**/
 BinaryTree* newTreeNode(string name)
 {
     struct BinaryTree* node = new BinaryTree;
 
-    ///String name = name
     node->name  = name;
-    ///Linked List = NULL
+
     node->names = NULL;
-    ///Left  = NULL
     node->left  = NULL;
-    ///Right = NULL
     node->right = NULL;
 
     return (node);
