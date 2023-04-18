@@ -151,25 +151,31 @@ void bubble(int array[ROWS][COLS], int limit, int column_index)
 }
 
 
-///Descending by the Project Directions
-void selection(int arr[ROWS][COLS], int limit, int colIndex)
+/**
+ * Selection Sort
+ * 
+ * Specifications:
+ *  - Default Order: Descending
+**/
+void selection(int array[ROWS][COLS], int limit, int column_index)
 {
-    int temp, largestIndex;
+    int temporary, largest_index;
 
  	for(; limit > 0; --limit)
     {
-        largestIndex = 0;
+        largest_index = 0;
+
     	for (unsigned i = 1; i <= limit; ++i)
         {
-            if (arr[i][colIndex] < arr[largestIndex][colIndex])
-                largestIndex=i;
+            if (array[i][column_index] < array[largest_index][column_index])
+                largest_index = i;
       	}
 
-		if (limit != largestIndex)
+		if (limit != largest_index)
         {
-            temp = arr[limit][colIndex];
-      		arr[limit][colIndex] = arr[largestIndex][colIndex];
-      		arr[largestIndex][colIndex] = temp;
+            temporary                          = array[limit][column_index];
+      		array[limit][column_index]         = array[largest_index][column_index];
+      		array[largest_index][column_index] = temporary;
 		}
    	}
 }
