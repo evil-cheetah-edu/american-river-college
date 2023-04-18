@@ -22,6 +22,7 @@ II. [CISP 430 - Data Structures](./CISP%20430%20-%20Data%20Structures/)
   9. [Sort Search](./CISP%20430%20-%20Data%20Structures/9.%20Sort%20Search/)
   11. [Recursion Number Sum](./CISP%20430%20-%20Data%20Structures/11.%20Recursion%20Number%20Sum/)
   12. [Recursion Comma](./CISP%20430%20-%20Data%20Structures/12.%20Recursion%20Comma/)
+  15. [Insert Search](./CISP%20430%20-%20Data%20Structures/15.%20Insert%20Search/)
 
 
 III. [CISP 440 - Discrete Structures for Computer Science](./CISP%20440%20-%20Discrete%20Structures%20for%20Computer%20Science/)
