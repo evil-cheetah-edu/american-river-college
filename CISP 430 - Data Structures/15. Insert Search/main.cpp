@@ -100,8 +100,11 @@ void insertNew(struct BinaryTree* &leaf, string name)
 ///Searches the item and outputs the path
 void binarySearch(struct BinaryTree* &leaf, string key)
 {
-    if (!leaf)
+    if ( !leaf )
+    {
         cout << "Wasn't able to find name: " << key;
+        return;
+    }
 
     ///Found the match
     if (key == leaf->name)
