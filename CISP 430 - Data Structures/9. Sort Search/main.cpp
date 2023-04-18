@@ -76,8 +76,9 @@ int main()
 }
 
 
-///Function Implementations
-
+/**
+ * Used to traverse the matrix
+**/
 void outPut(int arr[ROWS][COLS])
 {
     for (unsigned i = 0; i < ROWS; ++i)
@@ -91,6 +92,10 @@ void outPut(int arr[ROWS][COLS])
     return;
 }
 
+
+/**
+ * Used to reset matrix to the default state between sorts
+**/
 void backUp(int arr[ROWS][COLS])
 {
     int backUpArray[ROWS][COLS] =
@@ -109,13 +114,17 @@ void backUp(int arr[ROWS][COLS])
     return;
 }
 
-void outPutColumn(int arr[ROWS][COLS], int columnIndex)
+
+/**
+ * Outputs specific column
+**/
+void outPutColumn(int arr[ROWS][COLS], int column_index)
 {
-    if (columnIndex < 0)
-        throw 404;
+    if (column_index < 0)
+        throw int(404);
 
     for (unsigned i = 0; i < ROWS; ++i)
-        cout << arr[i][columnIndex] << endl;
+        cout << arr[i][column_index] << endl;
 }
 
 
