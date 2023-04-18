@@ -97,7 +97,9 @@ void insertNew(struct BinaryTree* &leaf, string name)
 }
 
 
-///Searches the item and outputs the path
+/**
+ * Binary Search
+**/
 void binarySearch(struct BinaryTree* &leaf, string key)
 {
     if ( !leaf )
@@ -106,21 +108,21 @@ void binarySearch(struct BinaryTree* &leaf, string key)
         return;
     }
 
-    ///Found the match
-    if (key == leaf->name)
-        ///Output leaf name + the number of times it occurs in the tree
-        cout << leaf->name << ' ' << numNames(leaf->names);
-
-    else if (key < leaf->name)
+    if (key < leaf->name)
     {
         cout << leaf->name << ' ';
         binarySearch(leaf->left, key);
+        return;
     }
-    else if (key > leaf->name)
+
+    if (key > leaf->name)
     {
         cout << leaf->name << ' ';
         binarySearch(leaf->right, key);
+        return;
     }
+
+    cout << leaf->name << ' ' << numNames(leaf->names);
 }
 
 
