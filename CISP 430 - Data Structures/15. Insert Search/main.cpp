@@ -127,18 +127,19 @@ void binarySearch(struct BinaryTree* &leaf, string key)
 
 
 ///Counts the number of repeats of a name
-int  numNames(struct node* &top)
+/**
+ * Returns number of items in `linked list`
+ *
+ * Countrer starts at 1, since the invocation
+ * comes from `binarySearch`
+**/
+int numNames(struct node* &top)
 {
-    ///Function call from binary search
-    ///=> There is at least one item
     int counter = 1;
 
-    ///If there is nothing in linked list
-    ///There is at least the name in the TreeNode
-    if (!top)
+    if ( !top )
         return counter;
 
-    ///While there is a linkedList node increase counter
     while (top)
     {
         top = top->next;
