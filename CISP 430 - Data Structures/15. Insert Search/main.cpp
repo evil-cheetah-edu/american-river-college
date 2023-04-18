@@ -6,26 +6,32 @@
  * Project "Insert Search"
 **/
 
+
 #include <iostream>
 #include <string>
 #include <fstream>
 
 using namespace std;
 
-///Nodes Declaration
+
+ifstream in("input.txt");
+
+
 struct node
 {
     string name;
     struct node* next;
 };
 
+
 struct BinaryTree
 {
     string name;
-    node* names;
-    BinaryTree* left;
-    BinaryTree* right;
+    struct node* names;
+    struct BinaryTree* left;
+    struct BinaryTree* right;
 };
+
 
 ///Function prototypes
 BinaryTree* newTreeNode(string name);
@@ -34,9 +40,6 @@ void binarySearch(struct BinaryTree* &leaf, string name);
 int  numNames(struct node* &top);
 void  newNode(struct node* &top, string name);
 void pushNode(struct node* &top, string name);
-
-
-ifstream in("input.txt");
 
 
 int main()
@@ -55,6 +58,7 @@ int main()
     return 0;
 }
 
+
 ///Create new Tree Node
 BinaryTree* newTreeNode(string name)
 {
@@ -71,6 +75,7 @@ BinaryTree* newTreeNode(string name)
 
     return (node);
 }
+
 
 ///Insert new Node into Tree
 void insertNew(struct BinaryTree* &leaf, string name)
@@ -91,6 +96,7 @@ void insertNew(struct BinaryTree* &leaf, string name)
 	else if (name > leaf->name)
 	    insertNew(leaf->right, name) ;   ///Insert in right subtree.
 }
+
 
 ///Searches the item and outputs the path
 void binarySearch(struct BinaryTree* &leaf, string key)
@@ -113,8 +119,8 @@ void binarySearch(struct BinaryTree* &leaf, string key)
         cout << leaf->name << ' ';
         binarySearch(leaf->right, key);
     }
-
 }
+
 
 ///Counts the number of repeats of a name
 int  numNames(struct node* &top)
@@ -138,6 +144,7 @@ int  numNames(struct node* &top)
     return counter;
 }
 
+
 ///Allocate new node for LinkedList
 void  newNode(struct node* &top, string name)
 {
@@ -145,6 +152,7 @@ void  newNode(struct node* &top, string name)
     top->name = name;
     top->next = NULL;
 }
+
 
 ///Pushes new LinkedList node
 void pushNode(struct node* &top, string name)
