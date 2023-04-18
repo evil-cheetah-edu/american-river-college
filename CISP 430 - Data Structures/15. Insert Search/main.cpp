@@ -1,12 +1,10 @@
-/**********************************
-*
-*   Eugene Moshchyn
-*   CISP 430 MW 3:00 - 4:25 pm
-*   Prof. I. Sabzevary
-*   November 10, 2019
-*   Project "Insert Search"
-*
-**********************************/
+/**
+ * Eugene Moshchyn
+ * CISP 430 MW 3:00 - 4:25 pm
+ * Prof. I. Sabzevary
+ * November 10, 2019
+ * Project "Insert Search"
+**/
 
 #include <iostream>
 #include <string>
