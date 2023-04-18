@@ -181,18 +181,27 @@ void selection(int array[ROWS][COLS], int limit, int column_index)
 }
 
 
-///Ascending by the Project Directions
-void shell(int arr[ROWS][COLS], int length, int colIndex)
+/**
+ * Shell Sort
+ *
+ * Specifications:
+ *  - Default Order: Ascending
+**/
+void shell(int array[ROWS][COLS], int length, int column_index)
 {
 	int temporary;
 
 	for (int gap = length / 2; gap >= 1; gap /= 2)
 		for(int i = gap; i < length; ++i)
-			for (int j = i; j >= gap && arr[j-gap][colIndex] > arr[j][colIndex]; j -= gap)
+			for (
+                int j = i;
+                (j >= gap) && (array[j - gap][column_index] > array[j][column_index]);
+                j -= gap
+            )
             {
-				temporary = arr[j-gap][colIndex];
-				arr[j-gap][colIndex] = arr[j][colIndex];
-				arr[j][colIndex] = temporary;
+				temporary                = array[j - gap][colIndex];
+				array[j - gap][colIndex] = array[   j   ][colIndex];
+				array[   j   ][colIndex] = temporary;
 			}
 }
 
@@ -209,7 +218,11 @@ void insertionSort(int arr[ROWS][COLS], int row_index)
 
 	for (int i = 1; i < COLS - 1; ++i)
     {
-		for (int j = i; j > 0 && arr[row_index][j - 1] > arr[row_index][j]; --j)
+		for (
+            int j = i;
+            (j > 0) && (arr[row_index][j - 1] > arr[row_index][j]);
+            --j
+        )
         {
 			temporary             = arr[row_index][  j  ];
 			arr[row_index][  j  ] = arr[row_index][j - 1];
