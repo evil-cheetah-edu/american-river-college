@@ -150,10 +150,12 @@ int numNames(struct node* &top)
 }
 
 
-///Allocate new node for LinkedList
+/**
+ * Creates new `node` for Linked List
+**/
 void  newNode(struct node* &top, string name)
 {
-    top = new node;
+    top       = new node;
     top->name = name;
     top->next = nullptr;
 }
