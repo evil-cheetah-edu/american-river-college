@@ -68,9 +68,9 @@ BinaryTree* newTreeNode(string name)
 
     node->name  = name;
 
-    node->names = NULL;
-    node->left  = NULL;
-    node->right = NULL;
+    node->names = nullptr;
+    node->left  = nullptr;
+    node->right = nullptr;
 
     return (node);
 }
@@ -149,7 +149,7 @@ void  newNode(struct node* &top, string name)
 {
     top = new node;
     top->name = name;
-    top->next = NULL;
+    top->next = nullptr;
 }
 
 
