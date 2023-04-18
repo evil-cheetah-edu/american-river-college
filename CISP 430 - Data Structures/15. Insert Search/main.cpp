@@ -151,7 +151,7 @@ int numNames(struct node* &top)
 
 
 /**
- * Creates new `node` for Linked List
+ * Creates new `node` for the Linked List
 **/
 void  newNode(struct node* &top, string name)
 {
@@ -161,19 +161,19 @@ void  newNode(struct node* &top, string name)
 }
 
 
-///Pushes new LinkedList node
+/**
+ * Pushes `node` to the Linked List
+**/
 void pushNode(struct node* &top, string name)
 {
-    ///When parsed from Tree
-    ///Does linkedList exist?
-    if (!top)
-        newNode(top, name);
-
-    else
+    if ( !top )
     {
-        while(top->next)
-            top = top->next;
-
-        newNode(top->next, name);
+        newNode(top, name);
+        return;
     }
+
+    while(top->next)
+        top = top->next;
+
+    newNode(top->next, name);
 }
