@@ -118,22 +118,29 @@ void outPutColumn(int arr[ROWS][COLS], int columnIndex)
         cout << arr[i][columnIndex] << endl;
 }
 
-///Ascending by the Project Directions
-void bubble(int arr[ROWS][COLS], int limit, int colIndex)
+
+/**
+ * Bubble Sort
+ * 
+ * Specifications:
+ *  - Default Order: Ascending
+**/
+void bubble(int array[ROWS][COLS], int limit, int column_index)
 {
-    int temp = 0;
+    int temporary = 0;
+
     for (; limit > 0; --limit)
         for (unsigned i = 0; i < ROWS - 1; ++i)
         {
-            if (arr[i][colIndex] > arr[i+1][colIndex])
+            if (array[i][column_index] > array[i + 1][column_index])
             {
-                ///Swap array element
-                temp = arr[i][colIndex];
-                arr[i][colIndex] = arr[i+1][colIndex];
-                arr[i+1][colIndex] = temp;
+                temporary                  = array[  i  ][column_index];
+                array[  i  ][column_index] = array[i + 1][column_index];
+                array[i + 1][column_index] = temporary;
             }
         }
 }
+
 
 ///Descending by the Project Directions
 void selection(int arr[ROWS][COLS], int limit, int colIndex)
