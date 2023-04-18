@@ -123,7 +123,7 @@ void bubble(int arr[ROWS][COLS], int limit, int colIndex)
 {
     int temp = 0;
     for (; limit > 0; --limit)
-        for (unsigned i = 0; i < ROWS; ++i)
+        for (unsigned i = 0; i < ROWS - 1; ++i)
         {
             if (arr[i][colIndex] > arr[i+1][colIndex])
             {
