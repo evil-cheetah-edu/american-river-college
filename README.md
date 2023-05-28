@@ -1,6 +1,10 @@
 # Description
 ## About this repository
-This repository has been created to hold the solutions for the assignments related to the courses that I have enrolled in.
+This repository has been created to hold the solutions for the assignments related to the courses that I have enrolled in at [American River College](https://arc.losrios.edu/).
+
+## Additional Links for American River College
+- [College Catalog](https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog.pdf)
+- [Computer Science Department Page](https://arc.losrios.edu/academics/programs-and-majors/computer-information-science)
 
 ## Table of Content
 I. [CISP 400 - Object Oriented Programming with C++](./CISP%20400%20-%20Object%20Oriented%20Programming%20with%20C%2B%2B/)
